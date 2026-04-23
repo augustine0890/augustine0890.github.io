@@ -1,0 +1,76 @@
+/* ==========================================================================
+   LATEX THEME — LIGHT
+   Classical academic typography inspired by LaTeX Computer Modern
+   ========================================================================== */
+
+/* Override font stack for the entire site */
+$serif              : 'EB Garamond', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+$sans-serif         : 'EB Garamond', 'Palatino Linotype', Palatino, Georgia, serif;
+$sans-serif-narrow  : 'EB Garamond', 'Palatino Linotype', Palatino, Georgia, serif;
+$monospace          : 'JetBrains Mono', 'Fira Code', 'Courier New', Courier, monospace;
+
+$global-font-family : $serif;
+$header-font-family : $serif;
+$caption-font-family: $serif;
+
+/* Primary palette — academic deep red */
+$primary-color          : #8b1a1a;
+$dark-primary-color     : mix(#000, $primary-color, 30%);
+$darker-primary-color   : mix(#000, $primary-color, 55%);
+$light-primary-color    : mix(#fff, $primary-color, 45%);
+
+/* Surface & text */
+$background         : #fffff8;   /* warm paper white */
+$background-light   : mix(#fff, $background, 40%);
+$background-lighter : #ffffff;
+$text               : #1a1a1a;
+$link               : #8b1a1a;
+$link-dark          : mix(#000, $link, 30%);
+$link-light         : mix(#000, $link, 10%);
+$footer             : #1e1e1e;
+
+/* Status colors */
+$danger-color   : #cc0000;
+$info-color     : #1a4a7a;
+$notice-color   : #555555;
+$success-color  : #2d6a2d;
+$warning-color  : #b35c00;
+
+/* Layout */
+$border-radius          : 0px;
+$box-shadow             : none;
+$global-transition      : all 0.18s ease-in-out;
+$masthead-height        : 58px;
+$navicon-width          : 26px;
+$navicon-height         : 3px;
+$sidebar-link-max-width : 250px;
+$sidebar-screen-min-width: 1024px;
+
+/* CSS custom properties — light mode */
+:root {
+    --global-base-color                 : #{$primary-color};
+    --global-bg-color                   : #{$background};
+    --global-footer-bg-color            : #{$footer};
+    --global-border-color               : #c8c4bc;
+    --global-dark-border-color          : #a09890;
+    --global-code-background-color      : #f5f3ee;
+    --global-code-text-color            : #2c2020;
+    --global-fig-caption-color          : #5a5550;
+    --global-link-color                 : #{$link};
+    --global-link-color-hover           : #{$link-dark};
+    --global-link-color-visited         : #{$link-light};
+    --global-masthead-link-color        : #{$text};
+    --global-masthead-link-color-hover  : #{$primary-color};
+    --global-text-color                 : #{$text};
+    --global-text-color-light           : #6a6560;
+    --global-thead-color                : #f0ede5;
+
+    /* LaTeX-specific tokens */
+    --latex-rule-thick                  : 2px;
+    --latex-rule-thin                   : 1px;
+    --latex-rule-color                  : #{$primary-color};
+    --latex-env-bg                      : #fdf8f0;
+    --latex-env-border                  : #{$primary-color};
+    --latex-masthead-border             : #{$text};
+    --latex-drop-cap-color              : #{$primary-color};
+}
