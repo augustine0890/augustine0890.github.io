@@ -1,0 +1,250 @@
+# Basic Site Settings
+locale                   : "en-US"
+site_theme               : "air"
+title                    : "Augustine Nguyen"
+title_separator          : "·"
+name                     : &name "Augustine Nguyen"
+description              : &description "Data Scientist · Financial Risk & Growth Analytics"
+url                      : https://augustine0890.github.io
+baseurl                  : ""
+repository               : "augustine0890/augustine0890.github.io"
+
+# Site Author
+author:
+  avatar           : "profile.png"
+  name             : "Augustine Nguyen"
+  pronouns         :
+  bio              : "Data Scientist working at the intersection of Financial Risk and Growth Analytics. Based in Republic of Korea."
+  location         : "Republic of Korea"
+  employer         : "FPT Software Korea"
+  uri              :
+  email            : "augustino0890@gmail.com"
+
+  # Academic — all blank (industry profile)
+  academia         :
+  arxiv            :
+  googlescholar    :
+  inspire-hep      :
+  impactstory      :
+  orcid            :
+  semantic         :
+  ssrn             :
+  pubmed           :
+  researchgate     :
+  scopus           :
+  zotero           :
+
+  # Repositories and software development
+  bitbucket        :
+  codepen          :
+  dribbble         :
+  github           : "augustine0890"
+  kaggle           :
+  stackoverflow    :
+
+  # Social media
+  artstation       :
+  bluesky          :
+  facebook         :
+  flickr           :
+  foursquare       :
+  goodreads        :
+  google_plus      :
+  keybase          :
+  instagram        :
+  lastfm           :
+  linkedin         : "augustine2015"
+  mastodon         :
+  medium           :
+  pinterest        :
+  soundcloud       :
+  steam            :
+  telegram         :
+  tumblr           :
+  twitter          : "augusti61988772"
+  vine             :
+  weibo            :
+  wikipedia        :
+  xing             :
+  youtube          :
+  zhihu            :
+
+# Site Settings
+teaser                   :
+breadcrumbs              : false
+words_per_minute         : 160
+future                   : true
+read_more                : "disabled"
+talkmap_link             : false
+comments:
+  provider               :
+  disqus:
+    shortname            :
+  discourse:
+    server               :
+  facebook:
+    appid                :
+    num_posts            :
+    colorscheme          :
+staticman:
+  allowedFields          : ['name', 'email', 'url', 'message']
+  branch                 : "gh-pages"
+  commitMessage          : "New comment."
+  filename               : comment-{@timestamp}
+  format                 : "yml"
+  moderation             : true
+  path                   : "_data/comments/{options.slug}"
+  requiredFields         : ['name', 'email', 'message']
+  transforms:
+    email                : "md5"
+  generatedFields:
+    date:
+      type               : "date"
+      options:
+        format           : "iso8601"
+atom_feed:
+  hide                   : true
+  path                   :
+
+# SEO Related
+google_site_verification :
+bing_site_verification   :
+alexa_site_verification  :
+yandex_site_verification :
+
+# Social Sharing
+twitter:
+  username               : &twitter
+facebook:
+  username               :
+  app_id                 :
+  publisher              :
+og_image                 :
+og_description           :
+social:
+  type                   : Person
+  name                   :
+  links:
+
+# Analytics
+analytics:
+  provider               :  "false"
+  google:
+    tracking_id          :
+
+# Reading Files
+include:
+  - .htaccess
+  - _pages
+  - files
+exclude:
+  - "*.sublime-project"
+  - "*.sublime-workspace"
+  - .asset-cache
+  - .bundle
+  - .github
+  - .jekyll-assets-cache
+  - .sass-cache
+  - assets/js/_main.js
+  - assets/js/plugins
+  - assets/js/vendor
+  - CHANGELOG
+  - Capfile
+  - config
+  - Dockerfile
+  - Gemfile
+  - Gruntfile.js
+  - gulpfile.js
+  - LICENSE
+  - local
+  - log
+  - node_modules
+  - package.json*
+  - Rakefile
+  - README
+  - tmp
+  - vendor
+keep_files:
+  - .git
+  - .svn
+encoding: "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
+# Conversion
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+
+# Markdown Processing
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
+
+# Collections — only portfolio kept (industry projects)
+collections:
+  portfolio:
+    output: true
+    permalink: /:collection/:path/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+  - scope:
+      path: ""
+      type: portfolio
+    values:
+      layout: single
+      author_profile: true
+      share: true
+      comment: false
+
+# Sass/SCSS
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Outputting
+permalink: /:categories/:title/
+timezone: Asia/Seoul
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-gist
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-redirect-from
+  - jemoji
+
+whitelist:
+  - jekyll-feed
+  - jekyll-gist
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-redirect-from
+  - jemoji
+
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
+
+compress_html:
+  clippings: all
+  ignore:
+    envs: development

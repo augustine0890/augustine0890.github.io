@@ -1,0 +1,10 @@
+# Top navigation menu
+main:
+  - title: "About"
+    url: /
+
+  - title: "Projects"
+    url: /portfolio/
+
+  - title: "CV"
+    url: /cv/
