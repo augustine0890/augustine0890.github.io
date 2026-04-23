@@ -1,39 +1,67 @@
 # augustine0890.github.io
 
-Personal portfolio site for **Augustine Nguyen** — Data Scientist · Financial Risk & Growth Analytics.
+Personal portfolio site for Augustine Nguyen, a Data Scientist focused on financial risk, fraud detection, growth analytics, and enterprise AI.
 
-Built on [academicpages](https://github.com/academicpages/academicpages.github.io) (Jekyll) and hosted on GitHub Pages.
+The site is built with [Jekyll](https://jekyllrb.com/) on top of the [academicpages](https://github.com/academicpages/academicpages.github.io) theme and deployed on GitHub Pages.
 
-## Local preview
+## What this site is for
+
+- Show Augustine's professional profile quickly and clearly.
+- Highlight work history, portfolio projects, and selected skills.
+- Keep the content easy to maintain by editing Markdown files directly.
+- Stay within the GitHub Pages free hosting workflow.
+
+## Project structure
+
+- `_config.yml` - site metadata, author profile, navigation, plugins, and theme settings.
+- `_pages/` - top-level pages such as About, CV, and 404.
+- `_portfolio/` - individual project pages shown on the portfolio index.
+- `_data/` - navigation and UI text data.
+- `_sass/` - theme and layout styles, including the custom LaTeX-inspired visual design.
+- `_includes/` and `_layouts/` - shared templates used by Jekyll.
+- `assets/js/main.min.js` - committed compiled JavaScript bundle.
+- `images/` - profile images, icons, and homepage screenshots.
+- `files/` - downloadable PDFs and related documents.
+
+## Local development
+
+Install dependencies and run the Jekyll server:
 
 ```bash
 bundle install
 bundle exec jekyll serve -l -H localhost
-# open http://localhost:4000
+```
+
+Open <http://localhost:4000> in your browser.
+
+If you need to rebuild the JavaScript bundle:
+
+```bash
+npm install
+npm run build:js
 ```
 
 ## Deploy to GitHub Pages
 
-1. Create a new **public** repo named exactly `augustine0890.github.io` on github.com.
-2. From this directory, push:
+1. Create a public repository named exactly `augustine0890.github.io`.
+2. Push this project to the `main` branch.
+3. In GitHub, go to `Settings` -> `Pages` and set Source to `Deploy from a branch`.
+4. Choose branch `main` and folder `/ (root)`.
+5. Wait for the GitHub Pages build to finish.
 
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial site"
-   git branch -M main
-   git remote add origin https://github.com/augustine0890/augustine0890.github.io.git
-   git push -u origin main
-   ```
+## Content editing
 
-3. On GitHub: Repo → **Settings** → **Pages** → Source: `Deploy from a branch` → Branch: `main` / `(root)`.
-4. Wait ~1–2 minutes. Site goes live at <https://augustine0890.github.io/>.
+Most updates should only require editing Markdown files:
 
-## Customize further
+- `_pages/about.md` for the homepage content.
+- `_pages/cv.md` for the CV page.
+- `_portfolio/*.md` for project entries.
+- `_data/navigation.yml` for the top navigation.
 
-- `_config.yml` — global site info, author sidebar, social links.
-- `_pages/about.md` — landing page.
-- `_pages/cv.md` — CV page.
-- `_portfolio/*.md` — individual project entries (one file per project).
-- `_data/navigation.yml` — top menu.
-- `images/profile.png` — replace with your own headshot.
+The visual style is controlled by the SCSS files in `_sass/`. The active theme is set in `_config.yml` with `site_theme: "latex"`.
+
+## Notes
+
+- The site is static and has no backend.
+- Comments and analytics are disabled in the current configuration.
+- The layout is tuned for an academic, paper-like presentation rather than a generic blog theme.
