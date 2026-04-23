@@ -9,65 +9,67 @@ redirect_from:
 
 *Data Scientist · Financial Risk & Growth Analytics · Republic of Korea*
 
-Welcome 👋
+---
 
-I am a **Data Scientist** working at the intersection of **Financial Risk** and **Growth Analytics**. I help banks, fintech companies, and growth-stage businesses make better decisions — whether that means flagging fraudulent transactions in milliseconds, scoring creditworthiness at scale, or optimizing a marketing funnel to improve conversion and retention.
+## Introduction
 
-My dual focus means I bring **quantitative rigor** to marketing problems (attribution, segmentation, experimentation) and **product thinking** to financial models (interpretability, fairness, business impact). I believe the best data scientists speak the language of both the risk desk and the growth team.
+I am a **Data Scientist** with nine years of industry experience spanning **financial risk modeling**, **growth analytics**, and **enterprise AI systems**. My work sits at the boundary between statistical rigor and production engineering — where models must be both mathematically defensible and reliable at scale.
+
+I hold a dual focus that few practitioners combine: the **quantitative discipline** of credit risk and fraud detection (probabilistic scoring, causal identification, regulatory interpretability) and the **experimental culture** of growth analytics (attribution modeling, behavioral segmentation, Bayesian experimentation). I believe these domains reinforce each other — risk thinking sharpens experimentation, and growth thinking keeps models accountable to business outcomes.
 
 ---
 
-## 🏆 Latest Highlight
+## Selected Work
 
-**Champion · FPT AI Hackathon 3 (2025)** — a global competition across FPT offices worldwide.
-Team **Cẩm Y Vệ (FKR-KTX)** won 1st place in the *KT/KB Technical Solutions* track with **AISOL**, a scalable Japanese-language RAG platform for enterprise document intelligence. Built on **Qdrant · Gemini · Qwen** with a parallelized multimodal pipeline for text, tables, and diagrams.
+**Champion — FPT AI Hackathon 3 (2025)**  
+Global competition across all FPT offices worldwide. Team *Cẩm Y Vệ (FKR-KTX)* placed 1st in the *KT/KB Technical Solutions* track with **AISOL** — a production-grade Japanese-language enterprise RAG platform. The system processes heterogeneous documents (text, tables, diagrams) via a parallelized multimodal pipeline built on **Qdrant · Gemini · Qwen**, with sub-second retrieval over large corpora.
 
 ---
 
-## What I Work On
+## Research & Technical Focus
 
 **Financial Data Science**
-- Credit Risk Modeling — scorecards, PD/LGD/EAD estimation, vintage analysis
-- Fraud Detection — real-time anomaly detection, graph-based fraud networks
-- Investment Analytics — portfolio analytics, securities quality monitoring
-- Causal Inference — instrumental variables, difference-in-differences for policy evaluation
+- Credit Risk Modeling — PD/LGD/EAD estimation, scorecard development, vintage analysis, model monitoring
+- Fraud Detection — real-time anomaly detection, graph-based fraud network analysis, behavioral sequencing
+- Investment Analytics — portfolio risk attribution, securities quality monitoring, performance measurement
+- Causal Inference — instrumental variables, difference-in-differences, propensity score matching, policy evaluation
 
-**Marketing & Product Data Science**
-- Customer Segmentation — RFM, behavioral clustering, customer lifetime value
-- Churn Prediction — survival models, early-warning systems, retention triggers
-- A/B Testing & Experimentation — hypothesis design, statistical power, Bayesian testing
-- Attribution Modeling — multi-touch attribution, media mix modeling (MMM)
-- Funnel & Conversion Analytics — drop-off analysis, personalization, pricing optimization
+**Marketing & Growth Analytics**
+- Customer Segmentation — RFM analysis, behavioral clustering, customer lifetime value (CLV) modeling
+- Churn & Retention — survival analysis, early-warning systems, uplift modeling, retention triggers
+- Experimentation — hypothesis design, statistical power, CUPED variance reduction, Bayesian A/B testing
+- Attribution — multi-touch attribution, media mix modeling (MMM), incrementality testing
+- Funnel Analytics — conversion optimization, pricing elasticity, personalization engines
 
-**Generative AI & RAG**
-- LLM pipelines, vector search, retrieval-augmented generation, multimodal document understanding
+**Generative AI & Retrieval Systems**
+- Retrieval-Augmented Generation — dense and sparse retrieval, hybrid search, re-ranking, multimodal pipelines
+- LLM Engineering — prompt optimization, fine-tuning, agentic workflows, evaluation frameworks
 
 ---
 
 ## Core Toolkit
 
-| Domain | Tools & Methods |
+| Domain | Methods & Tools |
 |---|---|
-| **Generative AI & RAG** | LLM Pipelines · RAG · Vector Search · Qdrant · Gemini · Qwen · LangChain |
-| **ML & Modeling** | Scikit-learn · XGBoost · LightGBM · Statsmodels · Survival Analysis · SHAP |
-| **Experimentation** | A/B · Bayesian A/B · Causal Inference (IV · DiD · PSM) |
-| **Data & BI** | SQL · Pandas · dbt · Apache Spark · Tableau · Metabase |
-| **Streaming & Pipelines** | Apache Kafka · Airflow · ELK Stack · Kinesis |
+| **Generative AI** | RAG · LLM Pipelines · Vector Search · Qdrant · Gemini · Qwen · LangChain |
+| **ML & Statistical Modeling** | Scikit-learn · XGBoost · LightGBM · Statsmodels · Survival Analysis · SHAP |
+| **Causal & Experimental** | A/B Testing · Bayesian A/B · Instrumental Variables · DiD · PSM · CUPED |
+| **Data Engineering** | SQL · Pandas · dbt · Apache Spark · Kafka · Airflow · ELK Stack |
 | **Databases** | PostgreSQL · Oracle · ClickHouse · MongoDB · Redis · OpenSearch |
-| **Cloud & Infra** | AWS · Azure · Docker · Kubernetes |
+| **Cloud & Infrastructure** | AWS · Azure · Docker · Kubernetes |
 | **Languages** | Python · Rust · SQL · R · Golang · SAS · TypeScript |
 
 ---
 
 ## Certifications
 
-- **AWS Certified Data Engineer – Associate**
-- **AWS Certified AI Practitioner – Foundational**
-- **Microsoft Certified: Azure AI Fundamentals**
-- **Nanodegree: Data Engineering with Microsoft Azure**
-- **Astronomer Certification: Apache Airflow Fundamentals**
+- AWS Certified Data Engineer — Associate
+- AWS Certified AI Practitioner — Foundational
+- Microsoft Certified: Azure AI Fundamentals
+- Nanodegree: Data Engineering with Microsoft Azure
+- Astronomer Certification: Apache Airflow Fundamentals
 
 ---
 
-📂 Check out my [**Projects**](/portfolio/) or browse my full [**CV**](/cv/).
-📬 Reach me at [augustino0890@gmail.com](mailto:augustino0890@gmail.com) — open to DS roles in fintech, banking, growth, product analytics, and enterprise AI / RAG systems.
+View my [**Projects**](/portfolio/) or browse the full [**CV**](/cv/).  
+Contact: [augustino0890@gmail.com](mailto:augustino0890@gmail.com) — open to roles in fintech, banking, growth analytics, and enterprise AI.

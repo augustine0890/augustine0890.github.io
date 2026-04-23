@@ -1,6 +1,6 @@
 # Basic Site Settings
 locale                   : "en-US"
-site_theme               : "air"
+site_theme               : "latex"
 title                    : "Augustine Nguyen"
 title_separator          : "·"
 name                     : &name "Augustine Nguyen"

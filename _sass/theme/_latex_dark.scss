@@ -1,0 +1,31 @@
+/* ==========================================================================
+   LATEX THEME — DARK
+   Dark mode overrides using warm parchment-on-charcoal palette
+   ========================================================================== */
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --global-base-color                 : #d4896a;
+        --global-bg-color                   : #1c1a18;
+        --global-footer-bg-color            : #111110;
+        --global-border-color               : #3a3830;
+        --global-dark-border-color          : #4e4a42;
+        --global-code-background-color      : #252320;
+        --global-code-text-color            : #c8c0b0;
+        --global-fig-caption-color          : #808070;
+        --global-link-color                 : #d4896a;
+        --global-link-color-hover           : #e8a888;
+        --global-link-color-visited         : #c07860;
+        --global-masthead-link-color        : #dedad2;
+        --global-masthead-link-color-hover  : #d4896a;
+        --global-text-color                 : #dedad2;
+        --global-text-color-light           : #908870;
+        --global-thead-color                : #242220;
+
+        --latex-rule-color                  : #d4896a;
+        --latex-env-bg                      : #201e1a;
+        --latex-env-border                  : #d4896a;
+        --latex-masthead-border             : #dedad2;
+        --latex-drop-cap-color              : #d4896a;
+    }
+}
