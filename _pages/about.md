@@ -7,15 +7,15 @@ redirect_from:
   - /about.html
 ---
 
-*Data Scientist · Financial Risk & Growth Analytics · Republic of Korea*
+*Data Scientist · Financial Risk & Growth Analytics · Computer Vision · Republic of Korea*
 
 ---
 
 ## Introduction
 
-I am a **Data Scientist** with nine years of industry experience spanning **financial risk modeling**, **growth analytics**, and **enterprise AI systems**. My work sits at the boundary between statistical rigor and production engineering — where models must be both mathematically defensible and reliable at scale.
+I am a **Data Scientist** with nine years of industry experience spanning **financial risk modeling**, **growth analytics**, **enterprise AI systems**, and **computer vision**. My work sits at the boundary between statistical rigor and production engineering — where models must be both mathematically defensible and reliable at scale.
 
-I hold a dual focus that few practitioners combine: the **quantitative discipline** of credit risk and fraud detection (probabilistic scoring, causal identification, regulatory interpretability) and the **experimental culture** of growth analytics (attribution modeling, behavioral segmentation, Bayesian experimentation). I believe these domains reinforce each other — risk thinking sharpens experimentation, and growth thinking keeps models accountable to business outcomes.
+I hold a dual focus that few practitioners combine: the **quantitative discipline** of credit risk and fraud detection (probabilistic scoring, causal identification, regulatory interpretability) and the **experimental culture** of growth analytics (attribution modeling, behavioral segmentation, Bayesian experimentation). I believe these domains reinforce each other — risk thinking sharpens experimentation, and growth thinking keeps models accountable to business outcomes. Increasingly, this work extends into **perception systems** — object detection and multi-object tracking — where modeling meets the physical world at the edge.
 
 ---
 
@@ -45,6 +45,11 @@ Global competition across all FPT offices worldwide. Team *Cẩm Y Vệ (FKR-KTX
 - Retrieval-Augmented Generation — dense and sparse retrieval, hybrid search, re-ranking, multimodal pipelines
 - LLM Engineering — prompt optimization, fine-tuning, agentic workflows, evaluation frameworks
 
+**Computer Vision & Perception**
+- Object Detection — YOLO and SSD families, dataset curation, model evaluation
+- Multi-Object Tracking — DeepSORT, ByteTrack, StrongSORT, re-identification, Kalman filtering
+- Edge Inference — TensorRT optimization, NVIDIA Jetson deployment, ROS 2 integration
+
 ---
 
 ## Core Toolkit
@@ -52,6 +57,7 @@ Global competition across all FPT offices worldwide. Team *Cẩm Y Vệ (FKR-KTX
 | Domain | Methods & Tools |
 |---|---|
 | **Generative AI** | RAG · LLM Pipelines · Vector Search · Qdrant · Gemini · Qwen · LangChain |
+| **Computer Vision** | YOLO · SSD · DeepSORT · ByteTrack · StrongSORT · Re-ID · TensorRT · OpenCV · Jetson · ROS 2 |
 | **ML & Statistical Modeling** | Scikit-learn · XGBoost · LightGBM · Statsmodels · Survival Analysis · SHAP |
 | **Causal & Experimental** | A/B Testing · Bayesian A/B · Instrumental Variables · DiD · PSM · CUPED |
 | **Data Engineering** | SQL · Pandas · dbt · Apache Spark · Kafka · Airflow · ELK Stack |
@@ -61,7 +67,7 @@ Global competition across all FPT offices worldwide. Team *Cẩm Y Vệ (FKR-KTX
 
 ---
 
-## Certifications
+## Credentials
 
 - AWS Certified Data Engineer — Associate
 - AWS Certified AI Practitioner — Foundational
