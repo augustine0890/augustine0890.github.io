@@ -116,7 +116,7 @@ Industrial University of Ho Chi Minh City, Vietnam · *2008 – 2013*
 
 ---
 
-## Certifications
+## Credentials
 
 - AWS Certified Data Engineer — Associate
 - AWS Certified AI Practitioner — Foundational
