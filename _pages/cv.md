@@ -9,14 +9,16 @@ redirect_from:
 
 {% include base_path %}
 
-*Data Scientist · Financial Risk & Growth Analytics*  
-Republic of Korea · [augustino0890@gmail.com](mailto:augustino0890@gmail.com) · [LinkedIn](https://www.linkedin.com/in/augustine2015/) · [GitHub](https://github.com/augustine0890)
+*Data Scientist · Financial Risk & Growth Analytics · Computer Vision*  
+Republic of Korea · [augustino0890@gmail.com](mailto:augustino0890@gmail.com) · [LinkedIn](https://www.linkedin.com/in/augustine2015/) · [GitHub](https://github.com/augustine0890) · [Twitter](https://twitter.com/augusti61988772)
+
+> *Where credit intelligence meets customer growth — turning data into revenue and trust.*
 
 ---
 
 ## Profile
 
-Data Scientist with nine years of industry experience across **credit risk modeling, fraud detection, growth analytics, and generative AI**. Proven record of shipping production ML systems serving 10M+ users, architecting data platforms handling 5B+ records, and winning a global hackathon championship in enterprise RAG. Fluent in both the quantitative rigor of financial risk and the experimental culture of growth analytics.
+Data Scientist with nine years of industry experience across **credit risk modeling, fraud detection, growth analytics, generative AI, and computer vision**. Proven record of shipping production ML systems serving 10M+ users, architecting data platforms handling 5B+ records, and winning a global hackathon championship in enterprise RAG. Fluent in both the quantitative rigor of financial risk and the experimental culture of growth analytics, with a growing focus on perception systems where modeling meets the physical world.
 
 ---
 
@@ -128,11 +130,12 @@ Industrial University of Ho Chi Minh City, Vietnam · *2008 – 2013*
 
 | Domain | Methods & Tools |
 |---|---|
-| **Generative AI & RAG** | LLM Pipelines · RAG · Vector Search · Qdrant · Gemini · Qwen · LangChain |
-| **ML & Statistical Modeling** | Scikit-learn · XGBoost · LightGBM · Statsmodels · Survival Analysis · SHAP · LIME |
+| **Generative AI & RAG** | LLM Pipelines · RAG · Vector Search · Qdrant · Gemini · Qwen · LangChain · Prompt Engineering |
+| **Computer Vision** | Object Detection (YOLO · SSD) · Multi-Object Tracking (DeepSORT · ByteTrack · StrongSORT) · Re-Identification · TensorRT · OpenCV · Edge Inference (Jetson) · ROS 2 |
+| **ML & Statistical Modeling** | Scikit-learn · XGBoost · LightGBM · Statsmodels · Survival Analysis (Kaplan-Meier · Cox PH · AFT) · SHAP · LIME |
 | **Financial Analytics** | Credit Scoring · Fraud Detection · Risk Dashboards · Basel Compliance Metrics |
 | **Growth & Marketing** | RFM · Cohort Analysis · CLV · MMM · Funnel Analytics · Propensity Scoring |
-| **Causal & Experimental** | A/B Testing · Bayesian A/B · IV · DiD · PSM · CUPED |
+| **Causal & Experimental** | A/B Testing · Bayesian A/B · Thompson Sampling · IV · DiD · PSM · CUPED |
 | **Data Engineering** | SQL · Pandas · dbt · Apache Spark · Kafka · Airflow · ELK Stack |
 | **Databases** | PostgreSQL · Oracle · ClickHouse · MongoDB · Redis · OpenSearch |
 | **Cloud & Infrastructure** | AWS · Azure · Docker · Kubernetes |
@@ -154,4 +157,4 @@ Industrial University of Ho Chi Minh City, Vietnam · *2008 – 2013*
 
 - Citizenship: Vietnamese
 - Country of Residence: Republic of Korea
-- Languages: English (fluent) · Vietnamese (native) · Korean (working proficiency)
+- Languages: English (fluent) · Vietnamese (native)

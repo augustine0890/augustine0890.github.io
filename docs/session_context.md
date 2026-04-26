@@ -483,3 +483,42 @@ contributor setting up locally.
 
 See also: Section 3 (SCSS compilation model), Section 8 (SCSS import-order
 contract), `_sass/layout/_latex_extras.scss`, `_sass/theme/_latex_dark.scss`.
+
+---
+
+## 12. CV content refresh — Computer Vision focus and language correction (April 2026)
+
+On 2026-04-26 the CV page (`_pages/cv.md`) was updated to reflect a broadened
+positioning that now includes **computer vision and perception systems**
+alongside the existing financial risk and growth analytics focus. The change
+was driven by Augustine's updated GitHub profile README, which surfaces
+production exposure to object detection (YOLO, SSD), multi-object tracking
+(DeepSORT, ByteTrack, StrongSORT), re-identification, TensorRT, and edge
+inference on NVIDIA Jetson with ROS 2. A dedicated "Computer Vision" row was
+added to the Technical Skills table, the profile statement was rewritten to
+mention perception systems, the page subtitle gained a third pillar, and the
+tagline *"Where credit intelligence meets customer growth — turning data into
+revenue and trust"* was promoted into a blockquote near the top to mirror the
+README's framing. A Twitter handle was added to the contact line. Survival
+analysis methods were enumerated (Kaplan-Meier, Cox PH, AFT) and Thompson
+Sampling was added to the experimental methods row, both reflecting updated
+statistical toolkit detail from the README.
+
+The Personal Details section was corrected to remove "Korean (working
+proficiency)" from the languages list at Augustine's explicit request. This
+matters for the audience signal: the CV no longer overstates Korean fluency
+to hiring managers in Korea, where claimed proficiency is likely to be tested
+in interviews. Languages now read: English (fluent), Vietnamese (native).
+
+The rejected alternative was a heavier rewrite — restructuring the page around
+three domains (Financial · Growth · Vision) rather than the existing
+chronological work history. That was deliberately not done because Augustine
+asked for a light touch ("most of the information is keep the same, just add a
+little new information"), and because chronological work history is the format
+hiring managers expect to skim. The dual-domain positioning described in
+Section 6 is now formally a tri-domain positioning, but the underlying
+narrative — quantitative rigor across finance, growth, and now perception —
+remains continuous.
+
+See also: Section 6 (positioning notes — should be re-read with the vision
+addition in mind), `_pages/cv.md`, README at `https://github.com/augustine0890`.
