@@ -87,13 +87,14 @@ Migrated an Oracle database to EDB (PostgreSQL), optimizing SQL queries for perf
 ### AZEN Global — *Data Scientist / ML Engineer*
 *March 2019 – July 2020 · South Korea*
 
-**ABACUS — Credit Risk Prediction Engine**
-- Developed credit risk models using machine learning, achieving +3% improvement in scoring accuracy for over 10 million users.
-- Optimized data pipelines for fault detection using Apache Spark, enhancing efficiency at multi-billion-record scale.
-- Architected high-availability database clusters with ClickHouse, MongoDB, and Redis managing 5B+ records with disaster recovery.
-- Created real-time monitoring dashboards and interactive reports for operational transparency.
+**ABACUS — Advanced Credit Risk Prediction Analysis Tool**
+A machine-learning platform that augments fault detection and refines credit risk modeling, sharpening the precision of financial assessments and operational reliability for an installed base of more than 10 million users.
+- Developed advanced credit risk models using machine learning algorithms, achieving a 3% lift in scoring accuracy and improving the precision of downstream financial assessments.
+- Optimized fault-detection data pipelines by streamlining processing on Apache Spark, materially increasing throughput for workflows serving 10M+ users.
+- Architected highly-available, resilient database clusters across ClickHouse, MongoDB, and Redis to manage 5B+ records, with disaster-recovery provisions safeguarding data integrity and operational continuity.
+- Built real-time monitoring dashboards and interactive reports surfacing live platform signals, strengthening operational transparency and supporting informed decision-making.
 
-*Technologies: Python · Django · FastAPI · XGBoost · ClickHouse · MongoDB · Oracle · Redis · Apache Spark*
+*Technologies: Python · Django · FastAPI · ClickHouse · MongoDB · Oracle · Redis · Apache Spark*
 
 ---
 
