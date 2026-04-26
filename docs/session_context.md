@@ -112,9 +112,11 @@ upstream; merging future upstream changes would require manual diffing.
 *Content layer (Markdown files).* All human-readable content lives in
 `_pages/` and `_portfolio/`. The four pages are: `about.md` (home, permalink
 `/`), `cv.md` (curriculum vitae, permalink `/cv/`), `portfolio.html` (project
-index, permalink `/portfolio/`), and `404.md`. The six portfolio projects live
-in `_portfolio/` as individually numbered Markdown files (`01-aisol.md`
-through `06-qaqc-dashboard.md`). The numbering controls display order.
+index, permalink `/portfolio/`), and `404.md`. The seven portfolio projects
+live in `_portfolio/` as individually numbered Markdown files (`01-aisol.md`
+through `07-investment-securities.md`). The numbering controls display order.
+*Superseded on 2026-04-26 by Section 13 — was previously six files; the QA/QC
+entry was split into two distinct projects.*
 
 *Configuration layer (`_config.yml`).* The single source of truth for site
 metadata, author profile (name, bio, social links), Jekyll settings, plugin
@@ -222,9 +224,11 @@ The original site content used emoji as section markers (🏆, 📍, ✉️, �
 typographic register of academic papers — they signal informality and casualness
 that undercuts the quantitative-rigor positioning. All emoji were replaced with
 Markdown formatting (bold, italic, horizontal rules, em-dashes) that renders
-cleanly in the serif font. Note that six portfolio project files (`_portfolio/*.md`)
-still contain emoji in their `excerpt:` frontmatter and body text. These were
-not updated in the April 2026 session and represent an inconsistency.
+cleanly in the serif font. As of 2026-04-26, the portfolio files have also been
+cleaned: a repository-wide grep for the original marker emoji returns no
+matches across `_pages/` and `_portfolio/`. *Superseded on 2026-04-26 by
+Section 13 — the previous note about lingering emoji in portfolio files no
+longer applies.*
 
 **Decision: Keep the three-item navigation (About, Projects, CV).**
 
@@ -260,12 +264,13 @@ on both the home page and CV. If this placement is to change (e.g., moved to
 the portfolio as a lesser item), it should be a deliberate decision — the win
 is the strongest near-term signal of applied AI capability.
 
-**Portfolio ordering.** The six portfolio files are numbered 01 through 06.
+**Portfolio ordering.** The seven portfolio files are numbered 01 through 07.
 Jekyll renders the portfolio archive in filesystem order, so the numeric prefix
 controls display order. AISOL (01) is first because it is the most recent and
 most prestigious. If projects are added or re-prioritized, the prefix numbering
 must be updated accordingly — renaming files will change URLs, which may break
-any external links.
+any external links. *Superseded on 2026-04-26 by Section 13 — was previously
+six files.*
 
 **Thesis and Mendelian Randomization.** Augustine's MPH thesis applied
 instrumental variable analysis to a biostatistics problem. The CV explicitly
@@ -274,11 +279,12 @@ policy evaluation." This framing bridges academia and industry for readers who
 might otherwise discount health research experience. It should be preserved.
 
 **The `jemoji` plugin.** The `jemoji` plugin is enabled in `_config.yml`. This
-converts emoji shortcodes in Markdown to image tags. The portfolio files still
-use emoji literals (e.g., `🏆`), not shortcodes, so `jemoji` does not affect
-them. However, if shortcode-style emoji are added to Markdown files in the
-future, they will be rendered as images, which may not match the intended
-LaTeX aesthetic.
+converts emoji shortcodes in Markdown to image tags. As of 2026-04-26, neither
+the page files nor the portfolio files contain emoji literals or shortcodes,
+so `jemoji` is currently a no-op for site content. However, if shortcode-style
+emoji are added to Markdown files in the future, they will be rendered as
+images, which may not match the intended LaTeX aesthetic — the plugin could be
+disabled outright if the no-emoji rule is treated as permanent.
 
 ---
 
@@ -343,12 +349,10 @@ The file `.github/workflows/` contains a workflow that runs a Jupyter notebook
 of scope). The workflow will never trigger, but it is confusing to find in the
 repository. It should be deleted in a future cleanup.
 
-**Portfolio emoji inconsistency.** The six `_portfolio/*.md` files still
-contain emoji in their titles and excerpts (e.g., `🏆 Champion Prize`). The
-main pages (about, CV) were updated to remove emoji. A future contributor
-editing portfolio files may be uncertain whether emoji are intended or not.
-The answer is: emoji in portfolio files is an oversight from the April 2026
-session, not a deliberate exception.
+**Portfolio emoji inconsistency — resolved 2026-04-26.** Earlier sessions left
+emoji in portfolio titles and excerpts. These have all been removed; portfolio
+and page Markdown files are now emoji-free. The no-emoji rule applies
+site-wide. *Superseded on 2026-04-26 by Section 13.*
 
 **Google Fonts single point of failure.** The `<link>` preconnect and
 stylesheet tags for Google Fonts are in `_includes/head.html` with no
@@ -374,14 +378,6 @@ may not degrade gracefully depending on browser behavior.
 ---
 
 ## 9. Open questions
-
-**Should portfolio project pages be updated to remove emoji?**
-The six `_portfolio/*.md` files were not touched during the LaTeX redesign
-session. Their emoji-laden excerpts (rendered on the portfolio index page and
-in browser tabs) are inconsistent with the academic register of the main pages.
-This matters because the portfolio index is a high-traffic page for anyone
-evaluating project work. Resolving this requires Augustine confirming whether
-he wants emoji removed from project pages.
 
 **Should analytics be configured?**
 The analytics provider is set to `"false"` in `_config.yml`. If Augustine
@@ -419,7 +415,7 @@ which exist in the repository as of the April 2026 session:
 - `_pages/about.md` — home page content, positioning statement, toolkit table,
   certifications.
 - `_pages/cv.md` — full professional history, education, skills, side projects.
-- `_portfolio/01-aisol.md` through `_portfolio/06-qaqc-dashboard.md` —
+- `_portfolio/01-aisol.md` through `_portfolio/07-investment-securities.md` —
   individual project detail pages.
 - `_data/navigation.yml` — navigation structure.
 - `assets/css/main.scss` — SCSS import order (the load-bearing contract).
@@ -522,3 +518,69 @@ remains continuous.
 
 See also: Section 6 (positioning notes — should be re-read with the vision
 addition in mind), `_pages/cv.md`, README at `https://github.com/augustine0890`.
+
+---
+
+## 13. Cross-tab consistency pass against the GitHub README (2026-04-26)
+
+On 2026-04-26 the three site tabs — About (`/`), Projects (`/portfolio/`), and
+CV (`/cv/`) — were aligned against Augustine's authoritative GitHub profile
+README, which is now treated as the single source of truth for positioning,
+project descriptions, and skills taxonomy. The motivation is durable: when the
+same facts appear in multiple surfaces (README, About, CV, portfolio cards),
+drift between them reads as carelessness to a hiring manager. The README is
+the most-edited of these surfaces, so propagating its wording outward keeps
+the site coherent without forcing dual maintenance.
+
+The most consequential change was splitting the FPT Software Korea entry into
+two distinct projects. The "QA/QC Dashboard" portfolio file had previously
+merged the QA/QC visualization work with the Oracle → EDB migration done for
+the separate Investment Securities Project (Meta). These are unrelated
+deliverables — one is a Java/Spring Boot/Chart.js statistical dashboard, the
+other is a SQL refactoring/ANSI compatibility migration — and conflating them
+overstated each project's scope while erasing the second project entirely. The
+fix added a new `_portfolio/07-investment-securities.md` and rewrote
+`06-qaqc-dashboard.md` to its true scope. The CV's FPT Software Korea section
+was restructured to match: each project gets its own one-line description,
+faithful bullets from Augustine's source text, and a project-specific
+technology list rather than a merged one. **Invariant going forward:** these
+two projects must remain independently described in any future content edits;
+do not re-merge them under a single heading.
+
+The About page gained the README's tagline blockquote *"Where credit
+intelligence meets customer growth — turning data into revenue and trust"*
+near the top, an expanded eleven-row Core Toolkit that mirrors the README's
+domain-by-domain skills taxonomy (adding Financial Analytics, Marketing
+Analytics, Streaming & Pipelines, and Data & BI as distinct rows rather than
+folded into a single Data Engineering row), and Twitter/LinkedIn/GitHub on the
+contact line. The CV's Side Projects descriptions were rewritten verbatim from
+the README and tech-tags expanded (`Docker` for discord-playdapp-bot, `Poetry`
+for outfit-square). The portfolio AISOL, BlockStream, and InsightFlow excerpts
+and titles were rewritten to match the README's phrasing — notably AISOL's
+title now leads with "Champion, FPT AI Hackathon 3 (2025)" and BlockStream's
+bullets follow the README's pipeline-arrow notation (`on-chain → Kafka →
+PostgreSQL + OpenSearch/Algolia`).
+
+The "Certifications" heading on both About and CV was renamed to
+"Credentials." This is a small but deliberate vocabulary choice from
+Augustine: "credentials" reads as broader and more professional than
+"certifications" alone, and the section already mixes vendor certifications
+with a nanodegree, which is not strictly a certification. Future additions to
+this section (e.g., licenses, professional memberships) will fit naturally
+under the broader term.
+
+The rejected alternative was to make the About page a near-clone of the
+README — porting in the Featured Work section, Statistical & Experimentation
+Toolkit code block, and Tech Stack badge wall. That was deliberately not done.
+The site separates About / Projects / CV across three tabs precisely so each
+tab can stay focused; cramming the entire README into About would duplicate
+the Portfolio collection and dilute the home page's introductory function. The
+About page's job is to land the positioning and route the reader; the
+Portfolio's job is to enumerate the work; the CV's job is the chronological
+record. The README, by contrast, is a single-page artifact that has to do all
+three at once because GitHub profiles only have one surface.
+
+See also: Section 5 (emoji decision now applies site-wide), Section 6
+(portfolio ordering — now seven files), `_pages/about.md`, `_pages/cv.md`,
+`_portfolio/06-qaqc-dashboard.md`, `_portfolio/07-investment-securities.md`,
+README at `https://github.com/augustine0890`.

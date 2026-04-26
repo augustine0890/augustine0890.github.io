@@ -9,11 +9,13 @@ redirect_from:
 
 *Data Scientist · Financial Risk & Growth Analytics · Computer Vision · Republic of Korea*
 
+> *Where credit intelligence meets customer growth — turning data into revenue and trust.*
+
 ---
 
 ## Introduction
 
-I am a **Data Scientist** with nine years of industry experience spanning **financial risk modeling**, **growth analytics**, **enterprise AI systems**, and **computer vision**. My work sits at the boundary between statistical rigor and production engineering — where models must be both mathematically defensible and reliable at scale.
+I am a **Data Scientist** with deep industry experience spanning **financial risk modeling**, **growth analytics**, **enterprise AI systems**, and **computer vision**. My work sits at the boundary between statistical rigor and production engineering — where models must be both mathematically defensible and reliable at scale.
 
 I hold a dual focus that few practitioners combine: the **quantitative discipline** of credit risk and fraud detection (probabilistic scoring, causal identification, regulatory interpretability) and the **experimental culture** of growth analytics (attribution modeling, behavioral segmentation, Bayesian experimentation). I believe these domains reinforce each other — risk thinking sharpens experimentation, and growth thinking keeps models accountable to business outcomes. Increasingly, this work extends into **perception systems** — object detection and multi-object tracking — where modeling meets the physical world at the edge.
 
@@ -56,13 +58,16 @@ Global competition across all FPT offices worldwide. Team *Cẩm Y Vệ (FKR-KTX
 
 | Domain | Methods & Tools |
 |---|---|
-| **Generative AI** | RAG · LLM Pipelines · Vector Search · Qdrant · Gemini · Qwen · LangChain |
+| **Generative AI & RAG** | LLM Pipelines · RAG · Vector Search · Qdrant · Gemini · Qwen · LangChain · Prompt Engineering |
 | **Computer Vision** | YOLO · SSD · DeepSORT · ByteTrack · StrongSORT · Re-ID · TensorRT · OpenCV · Jetson · ROS 2 |
-| **ML & Statistical Modeling** | Scikit-learn · XGBoost · LightGBM · Statsmodels · Survival Analysis · SHAP |
-| **Causal & Experimental** | A/B Testing · Bayesian A/B · Instrumental Variables · DiD · PSM · CUPED |
-| **Data Engineering** | SQL · Pandas · dbt · Apache Spark · Kafka · Airflow · ELK Stack |
+| **ML & Modeling** | Scikit-learn · XGBoost · LightGBM · Statsmodels · Survival Analysis · SHAP · LIME |
+| **Financial Analytics** | Credit Scoring · Fraud Rules Engine · Risk Dashboards · Basel Compliance Metrics |
+| **Marketing Analytics** | Cohort Analysis · CLV Modeling · MMM · Funnel Analytics · Propensity Scoring |
+| **Experimentation** | A/B · Multivariate · Bayesian A/B · Causal Inference (IV, DiD, PSM) · CUPED |
+| **Data & BI** | SQL · Pandas · dbt · Apache Spark · Tableau · Metabase · Chart.js |
+| **Streaming & Pipelines** | Apache Kafka · Airflow · ELK Stack · Kinesis · ETL/ELT |
 | **Databases** | PostgreSQL · Oracle · ClickHouse · MongoDB · Redis · OpenSearch |
-| **Cloud & Infrastructure** | AWS · Azure · Docker · Kubernetes |
+| **Cloud & Infra** | AWS · Azure · Docker · Kubernetes |
 | **Languages** | Python · Rust · SQL · R · Golang · SAS · TypeScript |
 
 ---
@@ -78,4 +83,4 @@ Global competition across all FPT offices worldwide. Team *Cẩm Y Vệ (FKR-KTX
 ---
 
 View my [**Projects**](/portfolio/) or browse the full [**CV**](/cv/).  
-Contact: [augustino0890@gmail.com](mailto:augustino0890@gmail.com) — open to roles in fintech, banking, growth analytics, and enterprise AI.
+Contact: [augustino0890@gmail.com](mailto:augustino0890@gmail.com) · [LinkedIn](https://www.linkedin.com/in/augustine2015/) · [GitHub](https://github.com/augustine0890) · [Twitter](https://twitter.com/augusti61988772) — open to DS roles in fintech, banking, growth, product analytics, and enterprise AI / RAG systems.

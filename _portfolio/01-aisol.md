@@ -1,10 +1,10 @@
 ---
-title: "AISOL — Enterprise RAG Platform for Document Intelligence"
-excerpt: "🏆 Champion at FPT AI Hackathon 3 (2025, global). A scalable Japanese-language RAG platform with parallelized multimodal pipeline."
+title: "AISOL — Enterprise RAG Platform · Champion, FPT AI Hackathon 3 (2025)"
+excerpt: "Champion at FPT AI Hackathon 3 (2025, global). Scalable Japanese-language RAG platform with parallelized multimodal pipeline on Qdrant, Gemini, and Qwen."
 collection: portfolio
 ---
 
-**🏆 Champion Prize · FPT AI Hackathon 3 (2025)** — *Global competition across FPT offices worldwide · Track: KT/KB Technical Solutions*
+**Champion · FPT AI Hackathon 3 (2025)** — *Global competition across FPT offices worldwide · Track: KT/KB Technical Solutions*
 
 Team **Cẩm Y Vệ (FKR-KTX)** won 1st place out of all competing teams with **AISOL**, a scalable Japanese-language RAG platform that converts complex business documents — Excel, Word, PPT, PDF — into structured, semantically rich data for enterprise AI retrieval systems.
 
