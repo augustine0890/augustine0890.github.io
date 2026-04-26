@@ -1,20 +1,20 @@
 ---
-title: "ABACUS — Credit Risk Prediction Engine"
-excerpt: "ML-powered credit scoring platform serving 10M+ users, managing 5B+ records with +3% scoring lift."
+title: "ABACUS — Advanced Credit Risk Prediction Analysis Tool"
+excerpt: "Machine-learning credit risk platform serving 10M+ users and managing 5B+ records, with a +3% lift in scoring accuracy."
 collection: portfolio
 ---
 
 **Company:** AZEN Global, South Korea · **Role:** Data Scientist / ML Engineer
 
-An advanced credit risk analysis platform leveraging machine learning to enhance fault detection capabilities and refine credit risk modeling, improving the precision of financial assessments and operational reliability for **over 10 million users**.
+ABACUS is a platform that leverages machine learning to enhance fault detection capabilities and refine credit risk modeling, significantly improving the precision of financial assessments and operational reliability for **over 10 million users**.
 
 ### Key Contributions
 
-- Built ML models (**XGBoost**, logistic regression scorecards) that improved credit risk scoring accuracy by **+3%** — a meaningful lift across millions of credit decisions.
-- Architected highly-available database clusters on **ClickHouse · MongoDB · Redis** managing **5B+ records**, with disaster recovery measures ensuring data integrity and reliability.
-- Optimized fault-detection pipelines via **Apache Spark**, significantly improving throughput for real-time credit decisioning workflows.
-- Delivered real-time monitoring dashboards and interactive reports enabling credit operations teams to act on early default signals.
+- Developed advanced credit risk models by implementing **machine learning algorithms**, achieving a **3% lift** in credit risk scoring accuracy and sharpening the precision of downstream financial assessments.
+- Optimized data pipelines for fault-detection systems by streamlining processing on **Apache Spark**, materially increasing throughput for workflows serving 10M+ users.
+- Architected **highly-available, resilient database clusters** across **ClickHouse · MongoDB · Redis** to manage **5B+ records**, with disaster-recovery provisions safeguarding data integrity and operational continuity.
+- Built **real-time monitoring dashboards** and interactive reports surfacing live platform signals, strengthening operational transparency and supporting informed decision-making.
 
 ### Tech Stack
 
-`Python` · `Django` · `FastAPI` · `XGBoost` · `ClickHouse` · `MongoDB` · `Oracle` · `Redis` · `Apache Spark`
+`Python` · `Django` · `FastAPI` · `ClickHouse` · `MongoDB` · `Oracle` · `Redis` · `Apache Spark`
