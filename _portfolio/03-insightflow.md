@@ -1,6 +1,6 @@
 ---
 title: "InsightFlow — Customer Behavior & Growth Analytics"
-excerpt: "Streaming analytics platform powering marketing and product decisions for e-commerce."
+excerpt: "Streaming analytics platform powering marketing and product decisions for e-commerce — RFM segmentation, conversion funnels, and propensity scoring."
 collection: portfolio
 ---
 

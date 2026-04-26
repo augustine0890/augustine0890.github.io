@@ -18,7 +18,7 @@ Republic of Korea · [augustino0890@gmail.com](mailto:augustino0890@gmail.com) �
 
 ## Profile
 
-Data Scientist with nine years of industry experience across **credit risk modeling, fraud detection, growth analytics, generative AI, and computer vision**. Proven record of shipping production ML systems serving 10M+ users, architecting data platforms handling 5B+ records, and winning a global hackathon championship in enterprise RAG. Fluent in both the quantitative rigor of financial risk and the experimental culture of growth analytics, with a growing focus on perception systems where modeling meets the physical world.
+Data Scientist with extensive industry experience across **credit risk modeling, fraud detection, growth analytics, generative AI, and computer vision**. Proven record of shipping production ML systems serving 10M+ users, architecting data platforms handling 5B+ records, and winning a global hackathon championship in enterprise RAG. Fluent in both the quantitative rigor of financial risk and the experimental culture of growth analytics, with a growing focus on perception systems where modeling meets the physical world.
 
 ---
 
@@ -35,15 +35,19 @@ Global competition across all FPT offices worldwide. Team *Cẩm Y Vệ (FKR-KTX
 *June 2024 – Present · South Korea*
 
 **QA/QC Data Analytics and Visualization Dashboard**
-- Designed and implemented data pipelines aggregating, preprocessing, and analyzing large QA/QC datasets using SQL and Java (Apache Commons Math) for statistical quality insights.
-- Applied advanced statistical methods to identify trends and anomalies; built interactive Chart.js visualizations for stakeholder decision-making.
-- Developed REST APIs using Spring Boot for real-time statistical reports and dashboards.
+Developed a data analytics and visualization dashboard to monitor and analyze QA/QC data, enabling real-time insights for product quality improvement through statistical processing and visual reporting.
+- Designed and implemented data pipelines to aggregate, preprocess, and analyze large QA/QC datasets using SQL and Java (Apache Commons Math), delivering statistical insights for quality enhancement.
+- Applied advanced statistical methods to identify trends and anomalies, creating interactive visualizations (pie, bar, line charts) with Chart.js for stakeholder decision-making.
+- Developed optimized REST APIs using Spring Boot to deliver real-time statistical reports and dashboards, streamlining data-driven quality process improvements.
+
+*Technologies: SQL · Java · Oracle · Apache Commons Math · Chart.js · REST APIs · Spring Boot*
 
 **Investment Securities Project — Meta**
-- Migrated Oracle database to EDB (PostgreSQL), converting complex financial SQL to ANSI-standard for compatibility and improved performance.
-- Translated business requirements into high-performance SQL queries aligned with project goals.
+Migrated an Oracle database to EDB (PostgreSQL), optimizing SQL queries for performance and compatibility to meet business requirements.
+- Converted and optimized Oracle SQL queries to ANSI-standard for EDB (PostgreSQL) compatibility, improving query efficiency.
+- Translated complex business requirements into high-performance SQL queries, ensuring alignment with project goals.
 
-*Technologies: SQL · Java · Oracle · Apache Commons Math · Chart.js · Spring Boot · EDB PostgreSQL*
+*Technologies: Oracle · EDB (PostgreSQL) · ANSI SQL*
 
 ---
 
@@ -145,11 +149,11 @@ Industrial University of Ho Chi Minh City, Vietnam · *2008 – 2013*
 
 ## Open Source & Side Projects
 
-- **[discord-playdapp-bot](https://github.com/augustine0890/discord-playdapp-bot)** — Rust · Serenity · MongoDB  
-  High-performance Discord bot for gaming community management: tournament tickets, engagement tracking, leaderboards.
+- **[discord-playdapp-bot](https://github.com/augustine0890/discord-playdapp-bot)** — Rust · Serenity · MongoDB · Docker  
+  High-performance Discord bot built in Rust using Serenity for gaming community management. Handles tournament ticket exchange, player engagement tracking, and leaderboard ranking via slash commands.
 
-- **[outfit-square](https://github.com/augustine0890/outfit-square)** — Python · Discord.py · MongoDB  
-  Discord bot for user point management in metaverse gaming channels with multi-stage deployment.
+- **[outfit-square](https://github.com/augustine0890/outfit-square)** — Python · Discord.py · MongoDB · Poetry  
+  Python-based Discord bot for user point management in metaverse gaming channels. Integrates MongoDB for persistent storage with multi-stage (dev/prod) deployment and OAuth2 authentication.
 
 ---
 
