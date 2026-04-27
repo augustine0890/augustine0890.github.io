@@ -1,586 +1,210 @@
 # Session Context: augustine0890.github.io
 
-Durable rationale, decisions, and learnings for Augustine Nguyen's personal
-portfolio site. This file is append-only context; execution plans live in
-`plan.md` if one exists.
+LLM onboarding document for Augustine Nguyen's portfolio site. Covers architecture,
+constraints, decisions, and change history. Read this before implementing any feature.
 
-Last substantively updated: April 2026.
-
----
-
-## 1. Project background
-
-Augustine Nguyen is a Data Scientist with nine years of industry experience
-across financial risk modeling, fraud detection, growth analytics, and
-enterprise AI systems. He works at FPT Software Korea and is based in the
-Republic of Korea. The site exists to present his professional profile — work
-history, project portfolio, and skills — to potential employers and
-collaborators, primarily in fintech, banking, growth analytics, and enterprise
-AI.
-
-The site was created from scratch in a single session in April 2026 as a cold
-start: no prior web presence existed. The first commit established the content
-skeleton; the second commit introduced the LaTeX-style visual redesign that
-defines the current look and feel. There is no legacy codebase to reconcile
-with, and no prior design system to preserve. The project is at an early,
-actively evolving stage.
-
-The primary audience is hiring managers, technical recruiters, and senior
-practitioners evaluating Augustine for DS or ML engineering roles. A secondary
-audience is collaborators or conference contacts who want a quick reference
-for his background. This shapes the content: the site foregrounds production
-impact (scale numbers, hackathon wins, business outcomes) rather than
-academic citation counts or publication lists, which distinguishes this from
-a standard academicpages deployment.
+Last updated: 2026-04-27.
 
 ---
 
-## 2. Project goal and success criteria
+## Project overview
 
-The intended end state is a live, professional portfolio at
-`https://augustine0890.github.io` that:
+**Who:** Augustine Nguyen — Data Scientist, 9 years, FPT Software Korea. Domains:
+credit risk, fraud detection, growth analytics, generative AI, computer vision.
 
-- loads quickly, displays correctly on desktop and mobile, and degrades
-  gracefully without JavaScript;
-- communicates Augustine's identity and positioning clearly within the first
-  screen of the home page;
-- maintains an academic and analytical visual register that signals
-  quantitative rigor without being austere;
-- is easy for Augustine to maintain himself by editing Markdown files — no
-  build toolchain knowledge required for content changes;
-- remains within the GitHub Pages free tier indefinitely.
+**Site purpose:** Professional portfolio for hiring managers / recruiters evaluating
+DS or ML engineering roles. Foregrounds production impact (scale numbers, hackathon
+wins) over academic outputs.
 
-Success is operational when the site is live and the visual design matches the
-academic paper aesthetic described in Section 5. There are no quantitative
-traffic or conversion targets. Non-goals include blog functionality, comment
-systems (disabled in config), talk maps, publication lists, and multi-author
-support — all of which the underlying academicpages theme supports but which
-are deliberately not used here.
+**Live URL:** `https://augustine0890.github.io`
+
+**Success criteria:** Loads fast, correct on mobile/desktop, degrades without JS,
+signals quantitative rigor, maintainable by editing Markdown only, stays on GitHub
+Pages free tier.
+
+**Non-goals:** Blog, comments, talks, publications, multi-author support.
 
 ---
 
-## 3. Constraints and fixed requirements
+## Architecture
 
-**Platform constraint — GitHub Pages.** The site must build and deploy using
-GitHub's built-in Jekyll pipeline (Deploy from branch: `main`). This means
-only plugins included in the `github-pages` gem whitelist are available. Custom
-Ruby gems that are not on that whitelist cannot be used. The `Gemfile` pins
-`github-pages` as the primary dependency, which in turn pins Jekyll and all
-plugin versions. Augustine cannot choose arbitrary plugin versions.
+**Stack:** Jekyll static site, academicpages theme fork, GitHub Pages deployment.
+Upstream theme is not tracked as a Git remote — all files are fully owned.
 
-**SCSS compilation model.** The styling system compiles all SCSS at build time
-through `assets/css/main.scss`. Import order is load-bearing: variables defined
-or overridden in a file take effect for all files imported after it. The theme
-file (`_latex_light.scss`) is imported before the layout files, so overriding
-SCSS variables in the theme file correctly propagates to all layout files. This
-contract must not be broken by reordering imports in `main.scss`.
+**Key directories:**
+- `_pages/` — 4 pages: `about.md` (`/`), `cv.md` (`/cv/`), `portfolio.html` (`/portfolio/`), `404.md`
+- `_portfolio/` — 7 project files (`01-aisol.md` … `07-investment-securities.md`), numeric prefix controls display order
+- `_sass/` — all styling (see Styling section below)
+- `_data/navigation.yml` — 3 nav items: About, Projects, CV
+- `assets/css/main.scss` — SCSS entry point; import order is load-bearing
+- `assets/js/main.min.js` — committed compiled bundle; rebuild only if JS plugins change
+- `files/` — static downloadable assets (e.g. `augustine-nguyen-cv.pdf`)
+- `_config.yml` — single source of truth for metadata, theme, plugins
 
-**No server-side logic.** The site is purely static. There is no backend,
-database, authentication, or server-rendered content. All personalization or
-dynamic behavior must be done in client-side JavaScript or foregone entirely.
-
-**Google Fonts dependency.** EB Garamond and JetBrains Mono are loaded from
-`fonts.googleapis.com` via a `<link>` tag in `_includes/head.html`. The site
-degrades to system serif fonts if Google Fonts is unreachable, but the
-typographic character of the LaTeX design is substantially diminished in that
-case. This is an accepted trade-off: the fonts are free, cached by browsers,
-and have high global CDN availability.
-
-**Content language.** All public-facing content is in English. Internal
-comments and commit messages are in English. The site does not require
-internationalization.
-
-**No analytics as of April 2026.** The `analytics.provider` key in
-`_config.yml` is set to `"false"`. Augustine has not connected Google Analytics
-or any other tracking service. This is either a deliberate privacy choice or
-deferred setup — the record is ambiguous. Adding analytics requires only
-setting the provider and tracking ID in `_config.yml`; no code changes are
-needed.
+**Data flow:** GitHub push → GitHub Pages runs Jekyll → compiles SCSS + Liquid → serves static files. No runtime processing.
 
 ---
 
-## 4. System architecture and project shape
+## Constraints (hard rules — do not break)
 
-The site is a **Jekyll static site** built on a fork of the
-[academicpages](https://github.com/academicpages/academicpages.github.io)
-theme. The upstream theme is not tracked as a Git remote; changes are applied
-directly to the working tree. This means there is no clean upgrade path from
-upstream; merging future upstream changes would require manual diffing.
-
-**Major components:**
-
-*Content layer (Markdown files).* All human-readable content lives in
-`_pages/` and `_portfolio/`. The four pages are: `about.md` (home, permalink
-`/`), `cv.md` (curriculum vitae, permalink `/cv/`), `portfolio.html` (project
-index, permalink `/portfolio/`), and `404.md`. The seven portfolio projects
-live in `_portfolio/` as individually numbered Markdown files (`01-aisol.md`
-through `07-investment-securities.md`). The numbering controls display order.
-*Superseded on 2026-04-26 by Section 13 — was previously six files; the QA/QC
-entry was split into two distinct projects.*
-
-*Configuration layer (`_config.yml`).* The single source of truth for site
-metadata, author profile (name, bio, social links), Jekyll settings, plugin
-configuration, collection definitions, and SCSS theme selection. The key that
-controls the visual theme is `site_theme: "latex"`, which must match a pair of
-files named `_latex_light.scss` and `_latex_dark.scss` in `_sass/theme/`.
-
-*Layout and template layer (`_layouts/`, `_includes/`).* Page structure is
-defined by Liquid templates. The `single` layout wraps all pages and portfolio
-items; the `archive` layout wraps the CV and portfolio index. These templates
-are mostly unmodified from the upstream theme. The `head.html` include was
-modified to inject the Google Fonts `<link>` tags.
-
-*Styling layer (`_sass/`).* The SCSS is organized into:
-- `_themes.scss` — shared variables (font stacks, type scale, breakpoints,
-  brand colors). Imported first.
-- `theme/_latex_light.scss` and `theme/_latex_dark.scss` — theme-specific color
-  palette, font overrides, and CSS custom properties for light and dark modes.
-  Imported second; variable overrides here propagate to everything below.
-- `layout/*.scss` — component stylesheets for base elements, masthead,
-  sidebar, page content, tables, buttons, etc.
-- `layout/_latex_extras.scss` — the custom academic style layer added in April
-  2026. Imported last in `main.scss` so it can safely override prior rules.
-  Contains: justified body text, small-caps headings with red rule, booktabs
-  tables, theorem/definition environments, sidebar and masthead refinements,
-  and a clean print stylesheet.
-
-*Asset layer.* Compiled JavaScript lives in `assets/js/main.min.js` and is
-built by running `npm run uglify` (bundles jQuery, fitvids, smooth-scroll,
-Plotly, and the navigation plugin). This is a one-time build step — the
-compiled file is committed to the repository. The CSS is compiled by Jekyll's
-built-in SCSS pipeline at build time; there is no separate CSS build step.
-
-*Data layer (`_data/`).* `navigation.yml` defines the three top-navigation
-items (About, Projects, CV). `ui-text.yml` contains UI string overrides.
-`authors.yml` exists but contains only template placeholders from upstream and
-is not used.
-
-**Key data flow.** A visitor requests a URL. GitHub Pages runs Jekyll, which
-reads `_config.yml`, processes collections and pages through Liquid templates,
-compiles SCSS, and outputs static HTML/CSS/JS. The compiled site is served
-directly as static files — no runtime processing. Content changes (editing
-`_pages/*.md` or `_portfolio/*.md`) require only a Git push; Jekyll rebuilds
-automatically on GitHub's infrastructure.
+1. **GitHub Pages only.** Only gems on the `github-pages` whitelist are usable. `Gemfile` pins `github-pages` as primary dependency.
+2. **SCSS import order in `main.scss` is load-bearing.**
+   - Theme files (`_latex_light.scss`) must be imported before all layout files.
+   - `_latex_extras.scss` must be imported last.
+   - Breaking this order causes silent visual regressions.
+3. **No server-side logic.** Purely static. Dynamic behavior must be client-side JS or foregone.
+4. **No emoji in content.** Emoji clash with the LaTeX typographic register. All pages and portfolio files are emoji-free. `jemoji` plugin is installed but is effectively a no-op.
+5. **Keep `files/augustine-nguyen-cv.pdf` filename stable.** The CV download button points to this path; renaming breaks the public URL.
+6. **Do not re-merge portfolio files 06 and 07.** `06-qaqc-dashboard.md` (Java/Spring Boot/Chart.js) and `07-investment-securities.md` (Oracle→EDB SQL migration) are distinct projects and must stay separate.
 
 ---
 
-## 5. Key decisions and trade-offs
+## Styling system
 
-**Decision: LaTeX-inspired visual theme over the existing "air" theme.**
+**Active theme:** `site_theme: "latex"` in `_config.yml`.
 
-The "air" theme (the default for this academicpages fork) uses a blue primary
-accent, gray background, and system sans-serif fonts. It is functional but
-generic — visually indistinguishable from thousands of similar academicpages
-deployments. Augustine requested a design that reads as "beautiful and
-analytical" for a data scientist and quantitative researcher. The LaTeX
-aesthetic (EB Garamond serif, cream paper background `#fffff8`, academic deep
-red accent `#8b1a1a`, booktabs tables, small-caps headings, justified text)
-directly signals quantitative academic culture — the visual language of
-statistical papers, econometrics textbooks, and finance research. The rejected
-alternative was incremental tweaking of the air theme, which would have
-produced a less distinctive result. The chosen path required creating two new
-theme SCSS files and one extras file rather than modifying existing files,
-which preserves a clean separation from upstream.
+**Files:**
+- `_sass/_themes.scss` — shared variables (font stacks, type scale, breakpoints). Imported first.
+- `_sass/theme/_latex_light.scss` — light palette, font overrides (`$sans-serif`, `$sans-serif-narrow`, `$global-font-family` all set to EB Garamond stack). Imported second.
+- `_sass/theme/_latex_dark.scss` — dark palette via `html[data-theme="dark"]` selector (JS toggle, not OS media query).
+- `_sass/layout/_latex_extras.scss` — custom academic layer. Imported last. Contains: justified body text, small-caps headings with red rule, booktabs tables, theorem environments, sidebar/masthead refinements, print stylesheet, `.cv-download-btn` styles.
+- `_sass/layout/*.scss` — upstream component files (base, masthead, sidebar, tables, buttons, etc.)
 
-**Decision: Create a new `latex` theme rather than modifying `air`.**
+**Key values:**
+- Background: `#fffff8` (cream paper)
+- Accent: `#8b1a1a` (academic deep red)
+- Body font: EB Garamond (Google Fonts)
+- Mono font: JetBrains Mono (Google Fonts)
+- Google Fonts loaded in `_includes/head.html`; degrades to system serif if unavailable
 
-The theme system in `main.scss` selects theme files dynamically using
-`site.site_theme`. Creating `_latex_light.scss` and `_latex_dark.scss` as new
-files and setting `site_theme: "latex"` in `_config.yml` means the original
-"air" theme files are untouched and revertible. If the LaTeX design needs to
-be abandoned, switching back requires changing one line in `_config.yml` and
-deleting three SCSS files. Modifying the air files in place would have made
-rollback harder and obscured the original theme's intent.
+**Dark mode:** JS sets `data-theme="dark"` on `<html>`. CSS selector is `html[data-theme="dark"]`, not `@media (prefers-color-scheme: dark)`.
 
-**Decision: Override `$sans-serif` and `$sans-serif-narrow` in the theme file,
-not just `$global-font-family`.**
-
-Several layout files (`_sidebar.scss`, `_masthead.scss`) reference `$sans-serif`
-and `$sans-serif-narrow` directly by name rather than through `$global-font-family`.
-Overriding only the global variable would have left the sidebar and masthead
-using system sans-serif fonts while the page body used EB Garamond — an
-inconsistent and visually jarring result. Overriding all three font variables
-in `_latex_light.scss` to point to the EB Garamond stack ensures consistency
-throughout the site. This works because the theme file is imported before all
-layout files in `main.scss`, so SCSS variable resolution picks up the override.
-
-**Decision: Use EB Garamond via Google Fonts rather than the Computer Modern
-web font.**
-
-Computer Modern is available as a web font (e.g., via the
-`dreampulse/computer-modern-web-font` CDN) and is the typographically "purest"
-choice for a LaTeX aesthetic. It was rejected because the font files are not
-hosted on a major CDN with Google-level global caching, the package has not
-seen recent maintenance, and EB Garamond is perceptually very similar to
-Computer Modern's text weight while being a professionally maintained Google
-Font with broad browser support and optical-size variants. The trade-off is
-that the font is not byte-for-byte identical to LaTeX output, but this is
-imperceptible to non-typographers.
-
-**Decision: Remove emoji from all page content.**
-
-The original site content used emoji as section markers (🏆, 📍, ✉️, 💼, 📂,
-📬). This was reversed in the LaTeX redesign because emoji clash with the
-typographic register of academic papers — they signal informality and casualness
-that undercuts the quantitative-rigor positioning. All emoji were replaced with
-Markdown formatting (bold, italic, horizontal rules, em-dashes) that renders
-cleanly in the serif font. As of 2026-04-26, the portfolio files have also been
-cleaned: a repository-wide grep for the original marker emoji returns no
-matches across `_pages/` and `_portfolio/`. *Superseded on 2026-04-26 by
-Section 13 — the previous note about lingering emoji in portfolio files no
-longer applies.*
-
-**Decision: Keep the three-item navigation (About, Projects, CV).**
-
-The upstream academicpages theme supports arbitrary navigation items including
-Publications, Talks, Teaching, Blog, etc. These were all removed in the initial
-site creation because Augustine's profile is an industry professional, not an
-academic. Adding publication counts, talk maps, or teaching histories would be
-false signals for an industry audience. The three items retained are the minimum
-necessary to present identity, work, and detailed history.
+**Booktabs table fix:** `_latex_extras.scss` opens its table override with `border: none` before setting `border-top`/`border-bottom`, because the upstream `_tables.scss` uses the `border` shorthand which sets all four sides and longhands alone do not clear it.
 
 ---
 
-## 6. Domain notes / product notes / data notes
+## Content facts (do not change without confirmation)
 
-**Positioning.** Augustine occupies an unusual niche: he has nine years of
-engineering and data science experience across financial risk (credit scoring,
-fraud detection) and growth analytics (experimentation, attribution, CLV) — two
-domains that rarely share a practitioner. His causal inference background
-(Mendelian Randomization thesis, instrumental variables, DiD) is academically
-grounded in a way unusual for industry DS roles. The site should continue to
-emphasize this dual-domain positioning and causal rigor as differentiators,
-not flatten it into a generic "data scientist" description.
+**Scale claims (load-bearing for credibility):**
+- ABACUS credit scoring: 10M+ users
+- AZEN Global database: 5B+ records
+- Credit scoring accuracy lift: +3%
 
-**Scale claims.** Several content items carry specific numbers: 10M+ users
-(ABACUS credit scoring), 5B+ records (AZEN Global database), +3% accuracy
-lift (credit scoring). These numbers are specific enough to be verifiable and
-should not be changed without confirmation from Augustine. They are the primary
-evidence of production impact and are load-bearing for the site's credibility.
+**Positioning:** Tri-domain — financial risk · growth analytics · computer vision. Causal inference background (Mendelian Randomization, IV, DiD) is a differentiator; preserve it.
 
-**Hackathon win (AISOL).** The FPT AI Hackathon 3 championship (2025) is the
-most recent and most prominent credential. It is currently featured prominently
-on both the home page and CV. If this placement is to change (e.g., moved to
-the portfolio as a lesser item), it should be a deliberate decision — the win
-is the strongest near-term signal of applied AI capability.
+**Hackathon:** FPT AI Hackathon 3 champion, 2025 (AISOL project, Japanese enterprise RAG on Qdrant/Gemini/Qwen). Most prominent credential — keep it featured on About and CV.
 
-**Portfolio ordering.** The seven portfolio files are numbered 01 through 07.
-Jekyll renders the portfolio archive in filesystem order, so the numeric prefix
-controls display order. AISOL (01) is first because it is the most recent and
-most prestigious. If projects are added or re-prioritized, the prefix numbering
-must be updated accordingly — renaming files will change URLs, which may break
-any external links. *Superseded on 2026-04-26 by Section 13 — was previously
-six files.*
+**CV download:** Button is in `_pages/cv.md` after the Personal Details section. Links to `/files/augustine-nguyen-cv.pdf` with `download` attribute. Button hidden from print via `@media print` in `_latex_extras.scss`.
 
-**Thesis and Mendelian Randomization.** Augustine's MPH thesis applied
-instrumental variable analysis to a biostatistics problem. The CV explicitly
-notes this as "methodology directly transferable to financial econometrics and
-policy evaluation." This framing bridges academia and industry for readers who
-might otherwise discount health research experience. It should be preserved.
+**Languages on CV:** English (fluent), Vietnamese (native). Do not add Korean.
 
-**The `jemoji` plugin.** The `jemoji` plugin is enabled in `_config.yml`. This
-converts emoji shortcodes in Markdown to image tags. As of 2026-04-26, neither
-the page files nor the portfolio files contain emoji literals or shortcodes,
-so `jemoji` is currently a no-op for site content. However, if shortcode-style
-emoji are added to Markdown files in the future, they will be rendered as
-images, which may not match the intended LaTeX aesthetic — the plugin could be
-disabled outright if the no-emoji rule is treated as permanent.
+**Credentials section** (not "Certifications") — deliberate vocabulary choice.
+
+**Navigation:** 3 items only (About, Projects, CV). Do not add Publications, Talks, Teaching, or Blog.
 
 ---
 
-## 7. Environment and reproducibility
+## Local development
 
-**Local preview.** Standard Jekyll workflow:
+**Tested Ruby version:** 3.3.x — use `Ruby+Devkit 3.3.x (x64)` from rubyinstaller.org.
+- Ruby 4.x: too new (breaks Jekyll 3.9 — removed `String#tainted?`)
+- Ruby 2.x: too old for current gem dependencies
 
-```
+**Windows setup:**
+```powershell
+# Run once after RubyInstaller — choose option 3 (MSYS2 + MINGW toolchain)
+ridk install
+
+gem install bundler
 bundle install
 bundle exec jekyll serve -l -H localhost
 ```
 
-The `-l` flag enables live reload. The site is then available at
-`http://localhost:4000`. Ruby and Bundler must be installed. The `Gemfile` does
-not pin Ruby version; as of April 2026, GitHub Pages is compatible with Ruby
-3.x.
+**macOS setup:**
+```bash
+brew install ruby@3.3
+# Add to ~/.zshrc:
+export PATH="/opt/homebrew/opt/ruby@3.3/bin:$PATH"
+export GEM_HOME="$HOME/.gem/ruby/3.3.0"
+export PATH="$GEM_HOME/bin:$PATH"
+source ~/.zshrc
+gem install bundler && bundle install
+bundle exec jekyll serve -l -H localhost
+```
 
-**JavaScript assets.** The compiled `assets/js/main.min.js` is committed to
-the repository. It does not need to be rebuilt for content or SCSS changes.
-If JavaScript plugins are updated (`npm update`) or new plugins are added, the
-file must be rebuilt with `npm run uglify` and committed. Node.js and npm must
-be installed for this step.
+**Windows-specific gems in Gemfile** (already committed, fixes startup errors):
+- `tzinfo-data` — required on Windows; Linux/macOS have system zoneinfo
+- `wdm` — faster file-watching on Windows
+- `faraday-retry` — suppresses informational warning from older gems
 
-**SCSS compilation.** Jekyll compiles SCSS automatically during `jekyll serve`
-or `jekyll build`. No separate CSS build step is required. The `style: compressed`
-setting in `_config.yml` minifies the output CSS.
+**Site:** `http://localhost:4000` — live reload enabled with `-l` flag.
 
-**Deployment.** Pushing to `origin/main` triggers GitHub Pages to rebuild and
-deploy. Typical propagation time is one to three minutes. No secrets,
-environment variables, or deploy keys are required beyond the repository being
-public and GitHub Pages being enabled in repository settings (Settings → Pages
-→ Source: Deploy from a branch → `main` / `(root)`).
+**JS bundle:** `assets/js/main.min.js` is committed. Rebuild only if JS plugins change: `npm install && npm run build:js`.
 
-**The Docker setup (`docker-compose.yaml`, `.devcontainer/`).** These files
-exist in the repository from the upstream academicpages template and provide
-an alternative local development path. They have not been validated against the
-current site configuration. Their use is optional; the `bundle exec jekyll serve`
-path is the tested approach.
+**Deploy:** Push to `main` → GitHub Pages rebuilds automatically (1–3 min).
 
 ---
 
-## 8. Risks, failure modes, and operational gotchas
+## Known gotchas
 
-**SCSS import order is a silent contract.** The fact that `_latex_extras.scss`
-must be imported last, and that the theme file must be imported before all
-layout files, is not documented anywhere in the code. If someone adds a new
-`@import` to `main.scss` without understanding this constraint, they may
-introduce hard-to-diagnose visual regressions. The rule is: theme files before
-layout files, `latex_extras` last.
-
-**Upstream academicpages is not tracked.** The site was initialized from a
-snapshot of academicpages and then customized. If upstream releases bugfixes
-or accessibility improvements, there is no clean way to pull them in. Any
-attempt to merge upstream would require manually resolving conflicts against the
-LaTeX theme customizations. Future contributors should treat the SCSS and
-layout files as fully owned, not as vendored dependencies.
-
-**The "Scrape Talk Locations" GitHub Actions workflow is a dead artifact.**
-The file `.github/workflows/` contains a workflow that runs a Jupyter notebook
-(`talkmap.ipynb`) to geocode talk locations whenever files under `_talks/` or
-`talks/` are pushed. Neither directory exists in this repository (talks are out
-of scope). The workflow will never trigger, but it is confusing to find in the
-repository. It should be deleted in a future cleanup.
-
-**Portfolio emoji inconsistency — resolved 2026-04-26.** Earlier sessions left
-emoji in portfolio titles and excerpts. These have all been removed; portfolio
-and page Markdown files are now emoji-free. The no-emoji rule applies
-site-wide. *Superseded on 2026-04-26 by Section 13.*
-
-**Google Fonts single point of failure.** The `<link>` preconnect and
-stylesheet tags for Google Fonts are in `_includes/head.html` with no
-fallback loading strategy. If Google Fonts is blocked (e.g., in China, in
-corporate firewalls), the page renders in system serif fonts. The visual
-design still functions but loses the EB Garamond character. Adding a
-`font-display: swap` hint (which Google's URL already includes by default)
-ensures text is visible immediately during font load, which is already handled.
-
-**Dark mode uses the JS attribute toggle, not a media query.** The
-`_latex_dark.scss` file applies dark mode colors via the `html[data-theme="dark"]`
-selector, which is set by the site's existing JavaScript when the sun/moon icon
-in the masthead is clicked. Users can override their system preference using
-that toggle. *Superseded on 2026-04-24 by Section 11 — the original
-implementation used `@media (prefers-color-scheme: dark)` and was corrected.*
-
-**Profile image path.** The `_config.yml` sets `avatar: "profile.png"`. Jekyll
-resolves this against `images/profile.png`. Whether a real photo or a
-placeholder exists at that path was not verified during the April 2026 session.
-If the image is missing, the sidebar will render without a photo, which may or
-may not degrade gracefully depending on browser behavior.
+- **SCSS import order** — see Constraints §2 above. Silent failure if broken.
+- **Portfolio file URLs** — renaming `_portfolio/` files changes their URLs. If external links exist, do not rename.
+- **`.github/workflows/`** — contains a dead "Scrape Talk Locations" workflow (geocodes `_talks/`). Neither `_talks/` nor `talks/` exist. Workflow never fires; delete it in a future cleanup.
+- **Profile image** — `_config.yml` sets `avatar: "profile.png"` → resolves to `images/profile.png`. Missing image degrades silently (no photo shown).
+- **Analytics** — `analytics.provider: "false"` in `_config.yml`. Not connected. Adding requires only setting provider + tracking ID in `_config.yml`.
 
 ---
 
-## 9. Open questions
+## Open questions
 
-**Should analytics be configured?**
-The analytics provider is set to `"false"` in `_config.yml`. If Augustine
-wants to understand who visits the site and from where (useful for evaluating
-job-search strategy), a provider like Google Analytics or Plausible could be
-added with minimal configuration. The decision is currently unresolved.
-
-**What is the intended update cadence for content?**
-The site has no blog and no news feed. Content (CV, portfolio) will drift from
-reality as Augustine changes roles and completes new projects. There is no
-mechanism to surface stale content. It is unclear whether Augustine intends to
-maintain this actively or treat it as a snapshot.
-
-**Should a favicon be added?**
-The `images/` directory contains favicon files from the upstream template
-(inferred from standard academicpages structure), but whether a custom favicon
-representing Augustine's brand has been set is unconfirmed.
-
-**Will a custom domain be added?**
-The site currently lives at `augustine0890.github.io`. A custom domain (e.g.,
-`augustine.dev` or similar) could be configured via GitHub Pages' custom domain
-setting and a CNAME file. If a custom domain is added, the `url` key in
-`_config.yml` must be updated to match, otherwise generated URLs (sitemap,
-feeds) will be incorrect.
+- Add analytics? (Google Analytics or Plausible — one-line config change)
+- Add custom domain? (update `url` in `_config.yml` + add CNAME file)
+- Add favicon? (upstream template may include placeholders in `images/`)
 
 ---
 
-## 10. References and evidence
+## Change history
 
-All facts in this document are grounded in the following artifacts, all of
-which exist in the repository as of the April 2026 session:
+### 2026-04-24 — Site created + LaTeX theme
 
-- `_config.yml` — site metadata, theme selection, plugin configuration,
-  social links, author bio.
-- `_pages/about.md` — home page content, positioning statement, toolkit table,
-  certifications.
-- `_pages/cv.md` — full professional history, education, skills, side projects.
-- `_portfolio/01-aisol.md` through `_portfolio/07-investment-securities.md` —
-  individual project detail pages.
-- `_data/navigation.yml` — navigation structure.
-- `assets/css/main.scss` — SCSS import order (the load-bearing contract).
-- `_sass/theme/_latex_light.scss` and `_latex_dark.scss` — color palette,
-  font variable overrides, CSS custom properties.
-- `_sass/layout/_latex_extras.scss` — the complete academic style layer.
-- `_sass/_themes.scss` — shared variable definitions.
-- `_includes/head.html` — Google Fonts injection.
-- `Gemfile` — Ruby gem dependencies and platform constraint.
-- `package.json` — JavaScript dependencies and build scripts.
-- `README.md` — local preview and deploy instructions.
-- Git log (`git log --oneline`): two commits as of April 2026, both authored
-  in a single session.
-- `.github/workflows/` — the dead "Scrape Talk Locations" workflow.
+Cold start: site built from academicpages fork. Two commits: content skeleton, then LaTeX redesign.
+
+**LaTeX theme decisions (permanent):**
+- New `_latex_light.scss` + `_latex_dark.scss` instead of modifying upstream `air` theme files — keeps rollback clean (change one line in `_config.yml`)
+- Override `$sans-serif` and `$sans-serif-narrow` in theme file (not just `$global-font-family`) so sidebar and masthead also use EB Garamond
+- EB Garamond over Computer Modern web font — better CDN, active maintenance, perceptually equivalent
+
+**CSS bugs fixed at launch:**
+1. **Booktabs table** — upstream `border` shorthand survived partial longhand override. Fix: add `border: none` first in the override block.
+2. **Dark mode** — initial `_latex_dark.scss` used `@media (prefers-color-scheme: dark)` but JS toggle writes `data-theme="dark"` on `<html>`. Fix: switch to `html[data-theme="dark"]` selector.
 
 ---
 
-## 11. Post-launch CSS cascade bugs and diagnostic lessons (April 2026)
+### 2026-04-26 — CV refresh + cross-tab consistency
 
-Two bugs were discovered immediately after the LaTeX theme launched. Both were
-CSS cascade problems, not SCSS compilation failures — a distinction that took
-some work to establish. The first step in diagnosis was fetching the live CSS
-directly from `https://augustine0890.github.io/assets/css/main.css`, which
-confirmed the SCSS was compiling and deploying correctly. With SCSS compilation
-ruled out, the investigation shifted to whether the generated CSS rules were
-winning or losing the cascade against earlier rules from the upstream
-`_tables.scss` and the existing dark-mode JavaScript mechanism.
+**CV updates** (`_pages/cv.md`):
+- Added Computer Vision as a third domain (YOLO/SSD, DeepSORT/ByteTrack/StrongSORT, TensorRT, Jetson/ROS 2)
+- Removed Korean from languages (do not re-add)
+- Added Thompson Sampling and Kaplan-Meier/Cox PH/AFT to skills
+- Added Twitter to contact line
+- Added tagline blockquote
 
-The first bug was in the booktabs table styling. The upstream `_tables.scss`
-contains `table { border: 1px solid var(--global-border-color); }`, which is a
-CSS shorthand that sets all four border sides simultaneously. The
-`_latex_extras.scss` override added `border-top: 2px solid` and `border-bottom:
-2px solid` but never cleared the left and right sides. Because longhand
-properties (`border-top`, `border-right`) are resolved independently, the
-original shorthand's left and right values survived the cascade, leaving visible
-vertical rules on every table — the opposite of the academic booktabs style.
-The fix was to add `border: none` as the first declaration inside the override
-block, which zeroes all four sides before the top and bottom are selectively
-restored. This is a non-obvious CSS cascade trap: overriding a shorthand
-partially with longhands does not clear the shorthand's other properties.
-
-The second bug was in dark mode activation. The existing academicpages JavaScript
-reads a user's toggle preference and writes `data-theme="dark"` onto the `<html>`
-element; the existing dark themes (e.g., `_air_dark.scss`) all target
-`html[data-theme="dark"]` as their selector. The initial `_latex_dark.scss`
-instead used `@media (prefers-color-scheme: dark)`, which responds only to the
-OS-level preference and ignores the in-page toggle entirely. Clicking the
-sun/moon icon in the masthead had no visible effect. The fix was to replace the
-media query with the `html[data-theme="dark"]` attribute selector to match the
-existing toggle mechanism. The Section 8 entry on dark mode has been corrected
-to reflect the fixed state.
-
-A secondary finding from this session: local Jekyll builds are sensitive to Ruby
-version. The system Ruby (2.6) is too old for current gem dependencies; Ruby 4.0
-(Homebrew default) is too new for Jekyll 3.9.0 and Liquid 4.0.3, which call the
-removed `String#tainted?` method. Ruby 3.3 installed via `brew install ruby@3.3`
-is the version that successfully runs `bundle install` and `bundle exec jekyll
-serve` for this project. This is worth recording because the `Gemfile` does not
-pin a Ruby version, so this compatibility window will not be obvious to a future
-contributor setting up locally.
-
-See also: Section 3 (SCSS compilation model), Section 8 (SCSS import-order
-contract), `_sass/layout/_latex_extras.scss`, `_sass/theme/_latex_dark.scss`.
+**Cross-tab alignment** (all tabs aligned against GitHub profile README as source of truth):
+- About: added tagline blockquote, expanded Core Toolkit to 11 rows, added Twitter/LinkedIn/GitHub contact
+- Portfolio AISOL title: now leads with "Champion, FPT AI Hackathon 3 (2025)"
+- **Split `06-qaqc-dashboard.md` and `07-investment-securities.md`** — previously merged incorrectly; must stay separate (see Constraints §6)
+- Renamed "Certifications" → "Credentials" site-wide
 
 ---
 
-## 12. CV content refresh — Computer Vision focus and language correction (April 2026)
+### 2026-04-27 — CV download button + Windows dev setup
 
-On 2026-04-26 the CV page (`_pages/cv.md`) was updated to reflect a broadened
-positioning that now includes **computer vision and perception systems**
-alongside the existing financial risk and growth analytics focus. The change
-was driven by Augustine's updated GitHub profile README, which surfaces
-production exposure to object detection (YOLO, SSD), multi-object tracking
-(DeepSORT, ByteTrack, StrongSORT), re-identification, TensorRT, and edge
-inference on NVIDIA Jetson with ROS 2. A dedicated "Computer Vision" row was
-added to the Technical Skills table, the profile statement was rewritten to
-mention perception systems, the page subtitle gained a third pillar, and the
-tagline *"Where credit intelligence meets customer growth — turning data into
-revenue and trust"* was promoted into a blockquote near the top to mirror the
-README's framing. A Twitter handle was added to the contact line. Survival
-analysis methods were enumerated (Kaplan-Meier, Cox PH, AFT) and Thompson
-Sampling was added to the experimental methods row, both reflecting updated
-statistical toolkit detail from the README.
+**CV download button (complete, live-ready):**
+- `files/augustine-nguyen-cv.pdf` — static PDF committed to repo
+- `_pages/cv.md` — `<a href="/files/augustine-nguyen-cv.pdf" download class="cv-download-btn">Download CV (PDF)</a>` placed after Personal Details section
+- `_sass/layout/_latex_extras.scss` — `.cv-download-btn` block: academic-red (`#8b1a1a`) button + `@media print { display: none }`
+- Future CV updates: replace PDF file in place, keep filename stable
 
-The Personal Details section was corrected to remove "Korean (working
-proficiency)" from the languages list at Augustine's explicit request. This
-matters for the audience signal: the CV no longer overstates Korean fluency
-to hiring managers in Korea, where claimed proficiency is likely to be tested
-in interviews. Languages now read: English (fluent), Vietnamese (native).
-
-The rejected alternative was a heavier rewrite — restructuring the page around
-three domains (Financial · Growth · Vision) rather than the existing
-chronological work history. That was deliberately not done because Augustine
-asked for a light touch ("most of the information is keep the same, just add a
-little new information"), and because chronological work history is the format
-hiring managers expect to skim. The dual-domain positioning described in
-Section 6 is now formally a tri-domain positioning, but the underlying
-narrative — quantitative rigor across finance, growth, and now perception —
-remains continuous.
-
-See also: Section 6 (positioning notes — should be re-read with the vision
-addition in mind), `_pages/cv.md`, README at `https://github.com/augustine0890`.
-
----
-
-## 13. Cross-tab consistency pass against the GitHub README (2026-04-26)
-
-On 2026-04-26 the three site tabs — About (`/`), Projects (`/portfolio/`), and
-CV (`/cv/`) — were aligned against Augustine's authoritative GitHub profile
-README, which is now treated as the single source of truth for positioning,
-project descriptions, and skills taxonomy. The motivation is durable: when the
-same facts appear in multiple surfaces (README, About, CV, portfolio cards),
-drift between them reads as carelessness to a hiring manager. The README is
-the most-edited of these surfaces, so propagating its wording outward keeps
-the site coherent without forcing dual maintenance.
-
-The most consequential change was splitting the FPT Software Korea entry into
-two distinct projects. The "QA/QC Dashboard" portfolio file had previously
-merged the QA/QC visualization work with the Oracle → EDB migration done for
-the separate Investment Securities Project (Meta). These are unrelated
-deliverables — one is a Java/Spring Boot/Chart.js statistical dashboard, the
-other is a SQL refactoring/ANSI compatibility migration — and conflating them
-overstated each project's scope while erasing the second project entirely. The
-fix added a new `_portfolio/07-investment-securities.md` and rewrote
-`06-qaqc-dashboard.md` to its true scope. The CV's FPT Software Korea section
-was restructured to match: each project gets its own one-line description,
-faithful bullets from Augustine's source text, and a project-specific
-technology list rather than a merged one. **Invariant going forward:** these
-two projects must remain independently described in any future content edits;
-do not re-merge them under a single heading.
-
-The About page gained the README's tagline blockquote *"Where credit
-intelligence meets customer growth — turning data into revenue and trust"*
-near the top, an expanded eleven-row Core Toolkit that mirrors the README's
-domain-by-domain skills taxonomy (adding Financial Analytics, Marketing
-Analytics, Streaming & Pipelines, and Data & BI as distinct rows rather than
-folded into a single Data Engineering row), and Twitter/LinkedIn/GitHub on the
-contact line. The CV's Side Projects descriptions were rewritten verbatim from
-the README and tech-tags expanded (`Docker` for discord-playdapp-bot, `Poetry`
-for outfit-square). The portfolio AISOL, BlockStream, and InsightFlow excerpts
-and titles were rewritten to match the README's phrasing — notably AISOL's
-title now leads with "Champion, FPT AI Hackathon 3 (2025)" and BlockStream's
-bullets follow the README's pipeline-arrow notation (`on-chain → Kafka →
-PostgreSQL + OpenSearch/Algolia`).
-
-The "Certifications" heading on both About and CV was renamed to
-"Credentials." This is a small but deliberate vocabulary choice from
-Augustine: "credentials" reads as broader and more professional than
-"certifications" alone, and the section already mixes vendor certifications
-with a nanodegree, which is not strictly a certification. Future additions to
-this section (e.g., licenses, professional memberships) will fit naturally
-under the broader term.
-
-The rejected alternative was to make the About page a near-clone of the
-README — porting in the Featured Work section, Statistical & Experimentation
-Toolkit code block, and Tech Stack badge wall. That was deliberately not done.
-The site separates About / Projects / CV across three tabs precisely so each
-tab can stay focused; cramming the entire README into About would duplicate
-the Portfolio collection and dilute the home page's introductory function. The
-About page's job is to land the positioning and route the reader; the
-Portfolio's job is to enumerate the work; the CV's job is the chronological
-record. The README, by contrast, is a single-page artifact that has to do all
-three at once because GitHub profiles only have one surface.
-
-See also: Section 5 (emoji decision now applies site-wide), Section 6
-(portfolio ordering — now seven files), `_pages/about.md`, `_pages/cv.md`,
-`_portfolio/06-qaqc-dashboard.md`, `_portfolio/07-investment-securities.md`,
-README at `https://github.com/augustine0890`.
+**Windows dev environment fixed:**
+- Added `tzinfo-data`, `wdm`, `faraday-retry` to `Gemfile` (Windows platform gems)
+- `README.md` updated with full Windows + macOS install guides including Ruby 3.3 requirement and `ridk install` option-3 step

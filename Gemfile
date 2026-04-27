@@ -11,3 +11,8 @@ end
 
 gem 'github-pages'
 gem 'connection_pool', '2.5.0'
+
+# Windows requires tzinfo-data for timezone support (Linux/macOS have system zoneinfo)
+gem 'tzinfo-data', platforms: [:windows, :jruby]
+gem 'wdm', '>= 0.1.0', platforms: [:windows]
+gem 'faraday-retry'
