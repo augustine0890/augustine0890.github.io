@@ -294,6 +294,35 @@ pre {
    10. AUTHOR SIDEBAR — minimal, small-caps name
    -------------------------------------------------------------------------- */
 
+.page__content .cv-download-actions {
+    margin: 1.2em 0 0;
+    text-align: right;
+}
+
+.page__content .cv-download-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.55em 0.95em;
+    background: var(--latex-rule-color);
+    border: 1px solid var(--latex-rule-color);
+    color: #fff;
+    font-family: $serif;
+    font-size: 0.9em;
+    font-variant: small-caps;
+    letter-spacing: 0.04em;
+    line-height: 1.2;
+    text-decoration: none;
+    white-space: nowrap;
+
+    &:hover {
+        background: var(--global-link-color-hover);
+        border-color: var(--global-link-color-hover);
+        color: #fff;
+        text-decoration: none;
+    }
+}
+
 .sidebar {
     font-family: $serif;
 
@@ -440,6 +469,10 @@ pre {
     .page__content p,
     .page__content li {
         text-align: justify;
+    }
+
+    .cv-download-btn {
+        display: none;
     }
 
     a {

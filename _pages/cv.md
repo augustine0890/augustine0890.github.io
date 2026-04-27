@@ -163,3 +163,7 @@ Industrial University of Ho Chi Minh City, Vietnam · *2008 – 2013*
 - Citizenship: Vietnamese
 - Country of Residence: Republic of Korea
 - Languages: English (fluent) · Vietnamese (native)
+
+<div class="cv-download-actions">
+  <a href="/files/augustine-nguyen-cv.pdf" download class="cv-download-btn">Download CV (PDF)</a>
+</div>
