@@ -203,7 +203,14 @@ Cold start: site built from academicpages fork. Two commits: content skeleton, t
 - `files/augustine-nguyen-cv.pdf` — static PDF committed to repo
 - `_pages/cv.md` — `<a href="/files/augustine-nguyen-cv.pdf" download class="cv-download-btn">Download CV (PDF)</a>` placed after Personal Details section
 - `_sass/layout/_latex_extras.scss` — `.cv-download-btn` block: academic-red (`#8b1a1a`) button + `@media print { display: none }`
-- Future CV updates: replace PDF file in place, keep filename stable
+- PDF is **auto-regenerated on every push** via `.github/workflows/generate-cv-pdf.yml` — no manual replacement needed
+
+**GitHub Actions PDF auto-generation:**
+- Workflow: `.github/workflows/generate-cv-pdf.yml`
+- Triggers: push to `main` when `_pages/cv.md`, `_sass/**`, `_layouts/**`, or `_includes/**` change; also `workflow_dispatch` for manual runs
+- Process: Ruby 3.3 + `bundle exec jekyll build` → Python HTTP server on port 4000 → Puppeteer (`networkidle2`, print media type, A4) → commits `files/augustine-nguyen-cv.pdf` back with `[skip ci]` to prevent re-triggering
+- Script: `.github/scripts/generate-cv-pdf.js` (Puppeteer, `--no-sandbox` for CI)
+- The `[skip ci]` tag on the auto-commit prevents an infinite loop since the commit only touches `files/`
 
 **Windows dev environment fixed:**
 - Added `tzinfo-data`, `wdm`, `faraday-retry` to `Gemfile` (Windows platform gems)
