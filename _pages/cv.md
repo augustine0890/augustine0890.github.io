@@ -21,7 +21,7 @@ Republic of Korea Â· [augustino0890@gmail.com](mailto:augustino0890@gmail.com) Â
 
 ## Profile
 
-Data engineer with **7+ years in industry**, focused on **market and financial data platforms**. Architected highly available ClickHouse, MongoDB, and Redis clusters managing **5B+ records**, optimized **Spark** processing for a platform serving **10M+ users**, built **Kafka**-based streams of on-chain financial transactions with sub-second search, and migrated investment securities SQL from **Oracle to EDB (PostgreSQL)**. Built the document pipeline behind the winning entry at **FPT AI Hackathon 3 (2025)**.
+Data engineer with **5+ years of industry data engineering**, focused on **market and financial data platforms**. Architected highly available ClickHouse, MongoDB, and Redis clusters managing **5B+ records**, optimized **Spark** processing for a platform serving **10M+ users**, built **Kafka**-based streams of on-chain financial transactions with sub-second search, and migrated investment securities SQL from **Oracle to EDB (PostgreSQL)**. Built the document pipeline behind the winning entry at **FPT AI Hackathon 3 (2025)**.
 
 Seeking **Senior Financial Data Engineer** roles, growing toward **Staff-level** ownership of platform architecture, shared engineering standards, and alignment between data producers and consumers. Engineering priorities include **point-in-time correctness, source reconciliation, controlled schema evolution, and recoverable ingestion**. A background in credit risk modeling keeps the design anchored to how financial data is consumed.
 

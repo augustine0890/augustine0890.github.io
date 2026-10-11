@@ -12,15 +12,16 @@ redirect_from:
 
 > *Market and financial data that is correct, explainable, and recoverable.*
 
-| 5B+ | 10M+ | < 1 s | Champion | 7+ years |
+| 5B+ | 10M+ | < 1 s | Champion | 5+ years |
 |:---:|:---:|:---:|:---:|:---:|
 | records on highly available clusters | platform users served | search over streaming transaction data | FPT AI Hackathon 3 (2025, global) | industry data engineering |
+{: .metrics-table}
 
 ---
 
 ## Introduction
 
-I am a data engineer with **7+ years in industry**, focused on **market and financial data platforms** and based in the **Republic of Korea**. I design ingestion, storage, and delivery so that traders, risk teams, analysts, and downstream systems receive data that is **correct as of a point in time, explainable, and recoverable**.
+I am a data engineer with **5+ years of industry data engineering**, focused on **market and financial data platforms** and based in the **Republic of Korea**. I design ingestion, storage, and delivery so that traders, risk teams, analysts, and downstream systems receive data that is **correct as of a point in time, explainable, and recoverable**.
 
 My work includes **highly available ClickHouse, MongoDB, and Redis clusters** holding **5B+ records**, **Spark** pipelines for a platform serving **10M+ users**, **Kafka**-based streams of on-chain financial transactions, and an **Oracle to EDB (PostgreSQL)** migration for an investment securities system. I also built the document pipeline behind the winning entry at **FPT AI Hackathon 3 (2025)**.
 
@@ -35,7 +36,7 @@ I am growing toward **Staff-level scope**: owning platform architecture across t
 | **Financial Data Engineering** | Highly available storage with disaster recovery · SQL migration that preserves business semantics · traceable, reconcilable records | [ABACUS](/portfolio/02-abacus/) · [Investment Securities](/portfolio/07-investment-securities/) |
 | **Market Data Engineering** | Real-time event ingestion · publish–subscribe fan-out · columnar storage for high-volume, time-ordered data · sub-second search | [BlockStream](/portfolio/05-blockstream/) · ClickHouse clusters |
 | **Toward Staff Data Engineering** | Platform architecture ownership · standards and paved roads · safe change management · operational excellence | [Staff-Level Scope](#staff-level-scope) |
-| *Adjacent: AI on financial data* | Document to structured data pipelines · vector indexing · LLM enrichment | [AISOL](/portfolio/01-aisol/) |
+| **Supporting: AI Data Engineering** | Enterprise document to structured data pipelines · vector indexing · LLM enrichment | [AISOL](/portfolio/01-aisol/) |
 
 ---
 

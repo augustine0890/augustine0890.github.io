@@ -566,3 +566,46 @@ pre {
         color: #555;
     }
 }
+
+/* --------------------------------------------------------------------------
+   METRICS TABLE & TABLE FIGURES
+   Body text keeps old-style figures; tables use lining figures so numbers
+   align. The About page metrics row (`{: .metrics-table}`) shows headline
+   figures in upright lining numerals instead of small caps.
+   -------------------------------------------------------------------------- */
+
+.page__content table {
+    font-variant-numeric: lining-nums tabular-nums;
+}
+
+.page__content table.metrics-table {
+    width: 100%;
+    table-layout: fixed;
+
+    th {
+        font-variant: normal;
+        font-variant-numeric: lining-nums;
+        font-size: 1.45em;
+        font-weight: 600;
+        letter-spacing: 0;
+        text-align: center;
+        line-height: 1.2;
+        padding: 0.45em 0.5em 0.25em;
+    }
+
+    td {
+        font-size: 0.88em;
+        font-style: italic;
+        text-align: center;
+        line-height: 1.35;
+        padding: 0.3em 0.5em 0.6em;
+        hyphens: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .page__content table.metrics-table {
+        th { font-size: 1.15em; }
+        td { font-size: 0.8em; }
+    }
+}

@@ -91,6 +91,7 @@ Upstream theme is not tracked as a Git remote — all files are fully owned.
 - ABACUS credit scoring: 10M+ users
 - AZEN Global database: 5B+ records
 - Credit scoring accuracy lift: +3%
+- Industry data engineering experience: 5+ years (earlier roles mixed backend, frontend, and data work; do not inflate to 7+)
 
 **Positioning:** Senior Financial Data Engineer for market and financial data platforms, supported by AI pipeline experience. Keep quantitative and modeling background to one sentence; preserve the factual graduate research record. Describe market data semantics, recovery, quality standards, and shared platform ownership as design priorities or future direction where delivery evidence is absent.
 

@@ -41,6 +41,7 @@ High-signal facts that should not be changed without confirmation:
 - ABACUS credit scoring served 10M+ users.
 - AZEN Global systems handled 5B+ records.
 - Credit scoring accuracy improved by 3%.
+- Industry data engineering experience is 5+ years (not 7+).
 - AISOL won Champion, FPT AI Hackathon 3, in 2025.
 - CV languages are English (fluent) and Vietnamese (native). Do not add Korean.
 - The section label is "Credentials", not "Certifications".
