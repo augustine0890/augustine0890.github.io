@@ -9,7 +9,8 @@
    -------------------------------------------------------------------------- */
 
 body {
-    font-size: 17px;
+    /* EB Garamond has a small x-height; 20px reads like ~17px in most fonts */
+    font-size: 20px;
     line-height: 1.65;
     font-feature-settings: "kern" 1, "liga" 1, "onum" 1;
     -webkit-font-smoothing: antialiased;
@@ -141,7 +142,7 @@ table {
     width: auto;
     max-width: 100%;
     margin: 1.8em auto;
-    font-size: 0.92em;
+    font-size: 0.95em;
     border: none;
     border-top: 2px solid var(--global-text-color);
     border-bottom: 2px solid var(--global-text-color);
@@ -328,25 +329,25 @@ pre {
 
     p, li {
         font-family: $serif;
-        font-size: 0.88em;
+        font-size: 0.95em;
     }
 
     .author__name {
         font-variant: small-caps;
         font-weight: normal;
-        font-size: 1.2em;
-        letter-spacing: 0.05em;
+        font-size: 1.1em;
+        letter-spacing: 0.03em;
         color: var(--global-text-color);
     }
 
     .author__bio {
         font-style: italic;
         color: var(--global-text-color-light);
-        font-size: 0.85em;
+        font-size: 0.92em;
     }
 
     .author__urls-wrapper {
-        font-size: 0.85em;
+        font-size: 0.92em;
     }
 
     /* Thin rule after author name */
@@ -365,7 +366,7 @@ pre {
     background: var(--global-footer-bg-color);
     color: #888880;
     font-family: $serif;
-    font-size: 0.8em;
+    font-size: 0.88em;
     padding: 1.5em 0;
 
     footer {
@@ -594,7 +595,7 @@ pre {
     }
 
     td {
-        font-size: 0.88em;
+        font-size: 0.92em;
         font-style: italic;
         text-align: center;
         line-height: 1.35;
@@ -605,7 +606,19 @@ pre {
 
 @media (max-width: 600px) {
     .page__content table.metrics-table {
-        th { font-size: 1.15em; }
-        td { font-size: 0.8em; }
+        table-layout: auto;
+        th { font-size: 0.9em; padding: 0.45em 0.2em 0.2em; white-space: nowrap; }
+        td { font-size: 0.78em; padding: 0.3em 0.15em 0.5em; }
+    }
+}
+
+/* Slightly smaller base on phones so lines are not too short */
+@media (max-width: 600px) {
+    body { font-size: 18px; }
+
+    /* Justified text leaves large word gaps on narrow screens */
+    .page__content p,
+    .page__content li {
+        text-align: left;
     }
 }
