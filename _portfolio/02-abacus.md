@@ -16,6 +16,10 @@ Data infrastructure for **ABACUS — Advanced Credit Risk Prediction Analysis To
 - Built **real-time monitoring dashboards and interactive reports** to surface live platform signals for operational decisions.
 - Developed credit risk models achieving a **3% lift in scoring accuracy**, connecting data processing to downstream model performance.
 
+### Engineering Scope
+
+Multi-store platform architecture: analytical, document, and cache tiers on ClickHouse, MongoDB, and Redis, with disaster recovery, distributed processing, and monitoring for a financial platform at 10M+ user scale.
+
 ### Tech Stack
 
 `Python` · `Django` · `FastAPI` · `ClickHouse` · `MongoDB` · `Oracle` · `Redis` · `Apache Spark`

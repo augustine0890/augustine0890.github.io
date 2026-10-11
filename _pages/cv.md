@@ -1,7 +1,7 @@
 ---
 layout: archive
 title: "Curriculum Vitae"
-description: "Senior Data Engineer profile: financial data infrastructure, streaming pipelines, SQL migration, resilient databases, and enterprise AI retrieval."
+description: "Senior Financial Data Engineer: market and financial data platforms, streaming pipelines, SQL migration, resilient databases, and platform architecture."
 permalink: /cv/
 author_profile: true
 redirect_from:
@@ -12,18 +12,28 @@ redirect_from:
 
 <div class="page__content cv-content" markdown="1">
 
-*Senior Data Engineer · Financial & Market Data Platforms* <br />
+*Senior Financial Data Engineer · Market & Financial Data Platforms* <br />
 Republic of Korea · [augustino0890@gmail.com](mailto:augustino0890@gmail.com) · [LinkedIn](https://www.linkedin.com/in/augustine2015/) · [GitHub](https://github.com/augustine0890) · [Twitter](https://twitter.com/augusti61988772)
 
-> *Reliable data platforms for financial operations, analysis, and AI.*
+> *Market and financial data that is correct, explainable, and recoverable.*
 
 ---
 
 ## Profile
 
-Data engineer with experience across **financial data infrastructure, distributed processing, streaming pipelines, SQL migration, and enterprise AI retrieval**. Architected highly available database clusters managing **5B+ records** and optimized **Spark** processing for a platform serving **10M+ users**. Built operational monitoring and financial SQL workflows, and contributed the winning enterprise RAG solution at **FPT AI Hackathon 3 (2025)**.
+Data engineer with **7+ years in industry**, focused on **market and financial data platforms**. Architected highly available ClickHouse, MongoDB, and Redis clusters managing **5B+ records**, optimized **Spark** processing for a platform serving **10M+ users**, built **Kafka**-based streams of on-chain financial transactions with sub-second search, and migrated investment securities SQL from **Oracle to EDB (PostgreSQL)**. Built the document pipeline behind the winning entry at **FPT AI Hackathon 3 (2025)**.
 
-Focused on **Senior Data Engineer roles in financial and market data platforms**, with an interest in growing toward Staff-level responsibility for architecture, reusable engineering standards, and alignment between data producers and consumers. Engineering priorities include **financial record consistency, source reconciliation, controlled schema evolution, and recoverable ingestion**, guided by downstream business requirements.
+Seeking **Senior Financial Data Engineer** roles, growing toward **Staff-level** ownership of platform architecture, shared engineering standards, and alignment between data producers and consumers. Engineering priorities include **point-in-time correctness, source reconciliation, controlled schema evolution, and recoverable ingestion**. A background in credit risk modeling keeps the design anchored to how financial data is consumed.
+
+---
+
+## Platform & Architecture Highlights
+
+- **Multi-store platform architecture:** highly available ClickHouse, MongoDB, and Redis clusters for 5B+ records, with disaster recovery provisions (AZEN Global).
+- **End-to-end streaming design:** on-chain collection → Kafka → PostgreSQL → OpenSearch / Algolia, with sub-second search (SupperTree).
+- **Database platform migration:** Oracle → EDB (PostgreSQL), rewriting SQL to ANSI while preserving investment securities business logic (FPT Software Korea).
+- **Throughput at scale:** Spark pipeline optimization for a platform serving 10M+ users (AZEN Global).
+- **Operational visibility:** real-time monitoring dashboards and reporting APIs for platform operators and stakeholders (AZEN Global, FPT Software Korea).
 
 ---
 
@@ -148,20 +158,17 @@ Industrial University of Ho Chi Minh City, Vietnam · *2008 – 2013*
 
 | Domain | Tools & Methods |
 |:---|:---|
-| **Financial Data Systems** | Credit Risk Platforms · Investment Securities SQL · Transaction Ingestion · Operational Reporting |
-| **Batch & Streaming Pipelines** | Apache Spark · Apache Kafka · Airflow · Kinesis · ETL/ELT · ELK Stack |
-| **SQL & Data Transformation** | SQL Optimization · Oracle → EDB (PostgreSQL) Migration · ANSI SQL · dbt · Pandas |
-| **Storage & Reliability** | PostgreSQL · Oracle · ClickHouse · MongoDB · Redis · Highly Available Clusters · Disaster Recovery |
-| **AI Data Engineering** | Multimodal Document Processing · RAG · Vector Search · Qdrant · Gemini · Qwen · LangChain |
-| **Data Delivery & Observability** | FastAPI · Django · Spring Boot · REST APIs · OpenSearch · Operational Dashboards |
+| **Financial Data Domains** | Investment Securities · Credit Risk · On-Chain Transactions · Fault Detection |
+| **Streaming & Real-Time Ingestion** | Apache Kafka · Kinesis · Publish–Subscribe · ELK Stack |
+| **Batch & Distributed Processing** | Apache Spark · Airflow · dbt · ETL/ELT · Pandas |
+| **Analytical & Operational Storage** | ClickHouse · PostgreSQL / EDB · Oracle · MongoDB · Redis |
+| **Platform Reliability** | Highly Available Clusters · Disaster Recovery · Operational Monitoring Dashboards |
+| **SQL Engineering & Migration** | Query Optimization · Oracle → EDB (PostgreSQL) Migration · ANSI SQL |
+| **Search & Retrieval** | OpenSearch · Algolia · Qdrant · Vector Search |
+| **AI Data Engineering** | Multimodal Document Processing · RAG · LangChain · Gemini · Qwen · HuggingFace |
+| **Delivery** | FastAPI · Django · Spring Boot · REST APIs |
 | **Cloud & Infrastructure** | AWS · Azure · Docker · Kubernetes |
-| **Languages** | Python · SQL · Rust · Golang · Java · TypeScript |
-
----
-
-## Quantitative & Modeling Background
-
-My background in **credit risk modeling, statistical analysis, and causal inference** helps me understand financial data requirements, including historical consistency, reproducible inputs, and downstream validation.
+| **Languages** | Python · SQL · Golang · Rust · Java · TypeScript |
 
 ---
 

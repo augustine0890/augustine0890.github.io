@@ -4,7 +4,7 @@ site_theme               : "latex"
 title                    : "Augustine Nguyen"
 title_separator          : "·"
 name                     : &name "Augustine Nguyen"
-description              : &description "Senior Data Engineer · Financial & Market Data Platforms"
+description              : &description "Senior Financial Data Engineer · Market & Financial Data Platforms"
 url                      : https://augustine0890.github.io
 baseurl                  : ""
 repository               : "augustine0890/augustine0890.github.io"
@@ -14,7 +14,7 @@ author:
   avatar           : "profile.png"
   name             : "Augustine Nguyen"
   pronouns         :
-  bio              : "Senior Data Engineer focused on financial and market data platforms, pipeline reliability, and AI data engineering."
+  bio              : "Senior Financial Data Engineer focused on market and financial data platforms, platform architecture, and reliability. Based in Republic of Korea."
   location         : "Republic of Korea"
   employer         : "FPT Software Korea"
   uri              :

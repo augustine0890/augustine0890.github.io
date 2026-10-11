@@ -1,28 +1,41 @@
 ---
 permalink: /
 title: "Augustine Nguyen"
-description: "Senior Data Engineer focused on financial and market data platforms, pipeline architecture, reliability, and AI data engineering."
+description: "Senior Financial Data Engineer focused on market and financial data platforms, platform architecture, reliability, and a path toward Staff-level scope."
 author_profile: true
 redirect_from:
   - /about/
   - /about.html
 ---
 
-*Senior Data Engineer · Financial & Market Data Platforms · Republic of Korea*
+*Senior Financial Data Engineer · Market & Financial Data Platforms · Republic of Korea*
 
-> *Reliable data platforms for financial operations, analysis, and AI.*
+> *Market and financial data that is correct, explainable, and recoverable.*
+
+| 5B+ | 10M+ | < 1 s | Champion | 7+ years |
+|:---:|:---:|:---:|:---:|:---:|
+| records on highly available clusters | platform users served | search over streaming transaction data | FPT AI Hackathon 3 (2025, global) | industry data engineering |
 
 ---
 
 ## Introduction
 
-I focus on **data infrastructure for financial applications**, bringing a data science perspective to engineering. Based in the **Republic of Korea**, I connect ingestion, transformation, storage, and delivery to the needs of the people who depend on the data.
+I am a data engineer with **7+ years in industry**, focused on **market and financial data platforms** and based in the **Republic of Korea**. I design ingestion, storage, and delivery so that traders, risk teams, analysts, and downstream systems receive data that is **correct as of a point in time, explainable, and recoverable**.
 
-My experience spans **credit risk platforms, investment securities SQL migration, blockchain transaction pipelines, streaming analytics, and enterprise AI retrieval**. It includes designing highly available database clusters managing **5B+ records**, optimizing **Spark** processing for a platform serving **10M+ users**, and building a document intelligence pipeline that won **FPT AI Hackathon 3 in 2025**.
+My work includes **highly available ClickHouse, MongoDB, and Redis clusters** holding **5B+ records**, **Spark** pipelines for a platform serving **10M+ users**, **Kafka**-based streams of on-chain financial transactions, and an **Oracle to EDB (PostgreSQL)** migration for an investment securities system. I also built the document pipeline behind the winning entry at **FPT AI Hackathon 3 (2025)**.
 
-I am particularly interested in **financial and market data platforms** where correctness, availability, and explainable data flows matter. Working with customer, product, and financial data has taught me to start with the downstream requirement and carry it through to architecture and operations.
+I am growing toward **Staff-level scope**: owning platform architecture across teams, setting the standards for how financial data is ingested, validated, and changed, and making the platform easier for other engineers to build on. An early career in credit risk modeling means I design for the people who *consume* the data, not just the pipelines that produce it.
 
-The scope I want to grow into is **Staff-level data engineering**: shaping platform architecture, establishing reusable engineering standards, and aligning data producers and consumers around clear requirements. I value decisions that make a platform easier for teams to operate and extend over time.
+---
+
+## Where I Fit
+
+| Focus | What I bring | Evidence |
+|:---|:---|:---|
+| **Financial Data Engineering** | Highly available storage with disaster recovery · SQL migration that preserves business semantics · traceable, reconcilable records | [ABACUS](/portfolio/02-abacus/) · [Investment Securities](/portfolio/07-investment-securities/) |
+| **Market Data Engineering** | Real-time event ingestion · publish–subscribe fan-out · columnar storage for high-volume, time-ordered data · sub-second search | [BlockStream](/portfolio/05-blockstream/) · ClickHouse clusters |
+| **Toward Staff Data Engineering** | Platform architecture ownership · standards and paved roads · safe change management · operational excellence | [Staff-Level Scope](#staff-level-scope) |
+| *Adjacent: AI on financial data* | Document to structured data pipelines · vector indexing · LLM enrichment | [AISOL](/portfolio/01-aisol/) |
 
 ---
 
@@ -38,31 +51,58 @@ Team *Cẩm Y Vệ (FKR-KTX)* placed 1st in the *KT/KB Technical Solutions* trac
 
 ---
 
-## Engineering Focus
+<a id="staff-level-scope"></a>
 
-### Financial Data Integrity & Market Data Semantics
+## Staff-Level Scope: Platform & Technical Direction
 
-My financial data experience includes credit risk systems, investment securities workflows, and on-chain transactions. For market data, my priorities include **consistent instrument identifiers, event and ingestion timestamps, trading calendars, missing observations, and price adjustments**. For financial records, I pay attention to **currency, units, decimal precision, transaction status, and source reconciliation**. I care about preserving a record's meaning as it moves between systems and making corrections understandable to downstream users.
+A senior engineer makes a pipeline reliable. A staff engineer makes the **platform** reliable, so every team can ship correct market and financial data without solving the same problems again. That is the scope I am building toward.
 
-### Financial SQL & Database Modernization
+### Architecture Ownership So Far
 
-My investment securities work includes **Oracle to EDB (PostgreSQL) SQL migration and query optimization**. I start with the financial business requirements that queries must preserve, then consider compatibility, access patterns, and performance. For financial platforms, I value clear transformation rules and reconciliation checks that help teams evaluate changes to their data workflows.
+| Decision area | What I owned | Where |
+|:---|:---|:---|
+| **Multi-store platform architecture** | Highly available ClickHouse, MongoDB, and Redis clusters for 5B+ records, with disaster recovery provisions | [ABACUS](/portfolio/02-abacus/) |
+| **End-to-end streaming design** | Collection → Kafka fan-out → PostgreSQL persistence → OpenSearch / Algolia indexing, with sub-second search | [BlockStream](/portfolio/05-blockstream/) |
+| **Database platform migration** | Oracle → EDB (PostgreSQL), rewriting SQL to ANSI while preserving securities business logic | [Investment Securities](/portfolio/07-investment-securities/) |
+| **Throughput at scale** | Spark pipeline optimization for a platform serving 10M+ users | [ABACUS](/portfolio/02-abacus/) |
+| **Requirements → data interfaces** | Turning securities business rules into SQL; building monitoring dashboards for platform operators | [Investment Securities](/portfolio/07-investment-securities/) · [ABACUS](/portfolio/02-abacus/) |
 
-### Reliable Pipelines & Recovery
+### How I Lead Platform Work
 
-My project work spans **Kafka event streaming, Spark processing, resilient database clusters, disaster recovery, and operational monitoring**. For financial pipelines, my design priorities include explicit handling of late or duplicate records, safe retries and backfills, and recovery procedures teams can follow. A useful pipeline delivers data consistently and makes failures diagnosable.
+1. **Architecture decisions in writing.** Design documents and ADRs that record the options, the tradeoffs (latency, throughput, cost, operational load), and the conditions that would reverse the decision.
+2. **Paved roads over one-offs.** Reusable ingestion and normalization templates with deduplication, replay, backfill, and quality checks built in, so onboarding a new feed is configuration, not a new project.
+3. **Data products with owners and SLOs.** Every critical dataset has an owner, a contract, and published freshness, completeness, and accuracy targets. Consumers know what to expect, and producers know what they are accountable for.
+4. **Change without breakage.** Versioned schemas, parallel runs with reconciliation during migrations, and deprecation windows for downstream consumers, the discipline a production database migration requires.
+5. **Operational excellence.** Runbooks, DR drills, alerts on data symptoms (staleness, gaps, volume anomalies) as well as job failures, and blameless incident reviews that end in platform fixes.
+6. **Controls for regulated data.** Access control, audit trails, retention policies, handling rules for sensitive fields, and lineage designed in from the start. Financial data has to make sense to auditors and regulators as well as to users.
+7. **Cost and capacity as design inputs.** Partitioning, retention tiers, and compute sizing planned against growth in instruments, venues, and history depth.
+8. **Multiplying other engineers.** Design reviews, written standards, and pairing that raise the team's baseline instead of routing every hard problem through one person.
 
-### Platform Architecture & Technical Direction
+### Target-State Market Data Platform
 
-I approach architecture through **access patterns, latency, throughput, storage cost, and operational complexity**. My experience with database clusters, streaming pipelines, and SQL migration informs those tradeoffs. As I move toward broader platform responsibility, I want to help teams document decisions, reuse ingestion and transformation patterns, and evolve interfaces without breaking downstream workflows.
+The reference design I would push for. Every layer is replayable, and correctness controls apply across the whole platform, not only inside individual pipelines.
 
-### Data Quality, Ownership & Traceability
+| Layer | Responsibility | Controls |
+|:---|:---|:---|
+| **Sources** | Exchange and vendor feeds · reference data (instruments, calendars, corporate actions) · internal trades and positions | Source contracts · onboarding checklist |
+| **Ingest** | Kafka with idempotent producers and replay | Deduplication keys · late and out-of-order handling |
+| **Raw store** | Immutable log of everything received | Retention policy · replay from any point |
+| **Normalize** | Symbology mapping · price adjustments · trading calendars and time zones | Reference data validation · quality gates |
+| **Curated store** | Point-in-time (bitemporal) datasets on ClickHouse / PostgreSQL | Reconciliation against source of record · lineage |
+| **Serve** | SQL and APIs · search · trading, risk, research, and AI consumers | SLOs · access control · audit trail |
 
-I value **clear dataset definitions, accountable ownership, source reconciliation, and traceable transformations**. The standards I want to help establish cover freshness and completeness expectations, schema changes, and the checks needed before data reaches consumers. These practices help teams investigate discrepancies and understand the inputs behind a financial result. I also value access controls and handling rules for sensitive financial fields.
+---
 
-### Data Delivery for Finance & AI
+## Engineering Principles for Market & Financial Data
 
-My work connects processing and storage to **SQL workflows, APIs, search indexes, operational dashboards, and AI retrieval**. I start with what consumers need to query or decide, then work backward to the required structure and delivery path. For AI inputs, that includes preserving source context; for financial analysis, it includes reproducible historical inputs.
+- **Point-in-time correctness.** Keep *event time*, *ingestion time*, and *knowledge time* separate. Use as-of joins and keep revisions so reports, backtests, and models never see data from the future.
+- **Reference data first.** Stable instrument and entity identifiers, symbol mapping across sources, corporate actions and price adjustments, trading calendars and time zones. Most market data bugs are reference data bugs.
+- **Financial records keep their meaning.** Currency, units, decimal precision, and transaction status travel with every record, and corrections stay visible to downstream users instead of silently overwriting history.
+- **Idempotent, replayable pipelines.** Deduplication keys, late and out-of-order event handling, deterministic reruns, and backfills that cannot corrupt history.
+- **Reconcile before you publish.** Check against the source of record *before* data reaches traders, risk, or finance.
+- **Modernize without changing meaning.** Database and SQL migrations start from the business rules the queries must preserve, then address compatibility, access patterns, and performance.
+- **Lineage and reproducibility.** Any number in a report or risk figure should trace back to versioned inputs and the transformation that produced it.
+- **Storage that fits the access pattern.** Columnar stores for analytical scans over time series, key-value caches for hot lookups, and search indexes for exploration, each chosen on latency, throughput, and cost.
 
 ---
 
@@ -70,20 +110,17 @@ My work connects processing and storage to **SQL workflows, APIs, search indexes
 
 | Domain | Tools & Methods |
 |:---|:---|
-| **Financial Data Systems** | Credit Risk Platforms · Investment Securities SQL · Transaction Ingestion · Operational Reporting |
-| **Batch & Streaming Pipelines** | Apache Spark · Apache Kafka · Airflow · Kinesis · ETL/ELT · ELK Stack |
-| **SQL & Data Transformation** | SQL Optimization · Oracle → EDB (PostgreSQL) Migration · ANSI SQL · dbt · Pandas |
-| **Storage & Reliability** | PostgreSQL · Oracle · ClickHouse · MongoDB · Redis · Highly Available Clusters · Disaster Recovery |
-| **AI Data Engineering** | Multimodal Document Processing · RAG · Vector Search · Qdrant · Gemini · Qwen · LangChain |
-| **Data Delivery & Observability** | FastAPI · Django · Spring Boot · REST APIs · OpenSearch · Operational Dashboards |
+| **Financial Data Domains** | Investment Securities · Credit Risk · On-Chain Transactions · Fault Detection |
+| **Streaming & Real-Time Ingestion** | Apache Kafka · Kinesis · Publish–Subscribe · ELK Stack |
+| **Batch & Distributed Processing** | Apache Spark · Airflow · dbt · ETL/ELT · Pandas |
+| **Analytical & Operational Storage** | ClickHouse · PostgreSQL / EDB · Oracle · MongoDB · Redis |
+| **Platform Reliability** | Highly Available Clusters · Disaster Recovery · Operational Monitoring Dashboards |
+| **SQL Engineering & Migration** | Query Optimization · Oracle → EDB (PostgreSQL) Migration · ANSI SQL |
+| **Search & Retrieval** | OpenSearch · Algolia · Qdrant · Vector Search |
+| **AI Data Engineering** | Multimodal Document Processing · RAG · LangChain · Gemini · Qwen · HuggingFace |
+| **Delivery** | FastAPI · Django · Spring Boot · REST APIs |
 | **Cloud & Infrastructure** | AWS · Azure · Docker · Kubernetes |
-| **Languages** | Python · SQL · Rust · Golang · Java · TypeScript |
-
----
-
-## Quantitative & Modeling Background
-
-My background in **credit risk modeling, statistical analysis, and causal inference** helps me understand financial data requirements, including historical consistency, reproducible inputs, and downstream validation.
+| **Languages** | Python · SQL · Golang · Rust · Java · TypeScript |
 
 ---
 
@@ -97,16 +134,10 @@ My background in **credit risk modeling, statistical analysis, and causal infere
 
 ---
 
-## Why I Care
-
-I enjoy making data easier to trust and use. An operations team can investigate a discrepancy. An analyst can reproduce a financial report. An engineer can understand a pipeline's dependencies and recover it after a failure.
-
-That is what draws me to broader platform work: building systems that teams can inspect, explain, operate, and depend on as their data needs grow.
-
----
-
 View my [**Projects**](/portfolio/) or browse the full [**CV**](/cv/).
 
-**Open to Senior Data Engineer roles in market data, financial services, and financial data platforms, with a path toward Staff-level platform responsibility.**
+**Open to Senior Financial Data Engineer roles in market data and financial data platforms, with a path toward Staff-level platform ownership.**
+
+*I want data that a trader, risk manager, or auditor can rely on and trace back to its source.*
 
 Contact: [augustino0890@gmail.com](mailto:augustino0890@gmail.com) · [LinkedIn](https://www.linkedin.com/in/augustine2015/) · [GitHub](https://github.com/augustine0890) · [Twitter](https://twitter.com/augusti61988772)

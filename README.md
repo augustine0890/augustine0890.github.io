@@ -20,14 +20,18 @@ impact quickly. Preserve the LaTeX-inspired design and the factual career record
 
 ## 2. Current Positioning
 
-- Senior Data Engineer focused on financial and market data platforms
+- Senior Financial Data Engineer focused on market and financial data platforms
 - Pipeline architecture, distributed processing, database resilience, and delivery
 - Data quality, recovery, ownership, and traceability as design priorities
 - AI data engineering as supporting experience
 - Staff-level architecture, shared standards, and producer/consumer alignment as
   future scope, not a claim of a current Staff title
 
-Keep quantitative and modeling background to a short supporting paragraph.
+The About page carries a "Staff-Level Scope" section: architecture ownership
+backed by project evidence, leadership practices, and a target-state market data
+platform labeled as a reference design (rendered as a table, not a diagram).
+
+Keep quantitative and modeling background to one supporting sentence.
 Preserve the research history in the CV. Distinguish documented financial data
 work from market feed and governance interests; do not invent deployments,
 leadership responsibilities, or outcomes.

@@ -15,6 +15,10 @@ A scalable system for real-time collection and processing of **Ethereum and Poly
 - Engineered the delivery path from **on-chain collection → Kafka → PostgreSQL → OpenSearch / Algolia**, supporting sub-second search.
 - Managed metadata enrichment, persistent storage, and indexing across the workflow to support data integrity and scalable retrieval.
 
+### Engineering Scope
+
+End-to-end ownership of a streaming financial transaction pipeline, from collection through event distribution, persistence, and search indexing. The problem has the same shape as a market data feed: high-volume, time-ordered events that must be captured completely and served quickly.
+
 ### Tech Stack
 
 `Python` · `Golang` · `Apache Kafka` · `PostgreSQL` · `OpenSearch` · `Algolia` · `Oracle` · `Kinesis`

@@ -92,7 +92,7 @@ Upstream theme is not tracked as a Git remote — all files are fully owned.
 - AZEN Global database: 5B+ records
 - Credit scoring accuracy lift: +3%
 
-**Positioning:** Market and financial data engineering, supported by AI pipeline experience. Keep quantitative and modeling background brief; preserve the factual graduate research record. Describe market data semantics, recovery, quality standards, and shared platform ownership as design priorities or future direction where delivery evidence is absent.
+**Positioning:** Senior Financial Data Engineer for market and financial data platforms, supported by AI pipeline experience. Keep quantitative and modeling background to one sentence; preserve the factual graduate research record. Describe market data semantics, recovery, quality standards, and shared platform ownership as design priorities or future direction where delivery evidence is absent.
 
 **Hackathon:** FPT AI Hackathon 3 champion, 2025 (AISOL project, Japanese enterprise RAG on Qdrant/Gemini/Qwen). Most prominent credential — keep it featured on About and CV.
 
@@ -244,3 +244,22 @@ Cold start: site built from academicpages fork. Two commits: content skeleton, t
   quantitative background is a single supporting sentence. Customer analytics
   projects emphasize ingestion, processing, and delivery rather than modeling or
   marketing methods. Financial SQL modernization is a dedicated homepage focus.
+
+---
+
+### 2026-10-11 — Senior Financial Data Engineer + Staff-level scope
+
+Aligned with the GitHub profile README (commit `d66ab40` in `augustine0890/augustine0890`).
+
+- Title is now "Senior Financial Data Engineer · Market & Financial Data Platforms"
+  in `_config.yml`, About, and CV.
+- About: added an at-a-glance metrics table, a "Where I Fit" table, and a
+  "Staff-Level Scope" section (architecture ownership table backed by projects,
+  eight platform-leadership practices, and a target-state market data platform
+  presented as a reference design). Engineering Focus prose became an
+  "Engineering Principles" list that keeps the financial-record and SQL
+  modernization points. Removed the Quantitative and Why I Care sections.
+- CV: rewrote Profile, added "Platform & Architecture Highlights", aligned the
+  skills table, and removed the Quantitative section. Research job and thesis kept.
+- ABACUS and BlockStream project pages gained an "Engineering Scope" note.
+- Mermaid is not rendered by GitHub Pages Jekyll; use tables for architecture.
