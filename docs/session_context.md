@@ -3,23 +3,25 @@
 LLM onboarding document for Augustine Nguyen's portfolio site. Covers architecture,
 constraints, decisions, and change history. Read this before implementing any feature.
 
-Last updated: 2026-04-27.
+Last updated: 2026-10-11.
 
 ---
 
 ## Project overview
 
-**Who:** Augustine Nguyen — Data Scientist, 9 years, FPT Software Korea. Domains:
-credit risk, fraud detection, growth analytics, generative AI, computer vision.
+**Who:** Augustine Nguyen — Senior Data Engineer positioning, based in the Republic
+of Korea. Experience: credit risk infrastructure, SQL migration, transaction
+pipelines, streaming analytics, and enterprise AI retrieval.
 
 **Site purpose:** Professional portfolio for hiring managers / recruiters evaluating
-DS or ML engineering roles. Foregrounds production impact (scale numbers, hackathon
-wins) over academic outputs.
+Senior Data Engineer roles in financial and market data platforms. Foregrounds
+architecture, reliability, and production impact; Staff-level responsibility is
+future scope, not a current title claim.
 
 **Live URL:** `https://augustine0890.github.io`
 
 **Success criteria:** Loads fast, correct on mobile/desktop, degrades without JS,
-signals quantitative rigor, maintainable by editing Markdown only, stays on GitHub
+signals engineering scope, maintainable through source content, stays on GitHub
 Pages free tier.
 
 **Non-goals:** Blog, comments, talks, publications, multi-author support.
@@ -33,7 +35,7 @@ Upstream theme is not tracked as a Git remote — all files are fully owned.
 
 **Key directories:**
 - `_pages/` — 4 pages: `about.md` (`/`), `cv.md` (`/cv/`), `portfolio.html` (`/portfolio/`), `404.md`
-- `_portfolio/` — 7 project files (`01-aisol.md` … `07-investment-securities.md`), numeric prefix controls display order
+- `_portfolio/` — 7 project files (`01-aisol.md` … `07-investment-securities.md`), `order` front matter controls Projects index display order
 - `_sass/` — all styling (see Styling section below)
 - `_data/navigation.yml` — 3 nav items: About, Projects, CV
 - `assets/css/main.scss` — SCSS entry point; import order is load-bearing
@@ -90,7 +92,7 @@ Upstream theme is not tracked as a Git remote — all files are fully owned.
 - AZEN Global database: 5B+ records
 - Credit scoring accuracy lift: +3%
 
-**Positioning:** Tri-domain — financial risk · growth analytics · computer vision. Causal inference background (Mendelian Randomization, IV, DiD) is a differentiator; preserve it.
+**Positioning:** Market and financial data engineering, supported by AI pipeline experience. Keep quantitative and modeling background brief; preserve the factual graduate research record. Describe market data semantics, recovery, quality standards, and shared platform ownership as design priorities or future direction where delivery evidence is absent.
 
 **Hackathon:** FPT AI Hackathon 3 champion, 2025 (AISOL project, Japanese enterprise RAG on Qdrant/Gemini/Qwen). Most prominent credential — keep it featured on About and CV.
 
@@ -215,3 +217,30 @@ Cold start: site built from academicpages fork. Two commits: content skeleton, t
 **Windows dev environment fixed:**
 - Added `tzinfo-data`, `wdm`, `faraday-retry` to `Gemfile` (Windows platform gems)
 - `README.md` updated with full Windows + macOS install guides including Ruby 3.3 requirement and `ridk install` option-3 step
+
+
+---
+
+### 2026-10-11 — Senior Data Engineer positioning
+
+- Aligned homepage, CV, sidebar, SEO metadata, and project narratives with the
+  GitHub profile: financial and market data platforms are the primary focus.
+- Foregrounded database architecture, Spark processing, transaction ingestion,
+  SQL migration, reliability, and downstream delivery. Preserved employer names,
+  historical job titles, dates, scale metrics, credentials, and languages.
+- Kept quantitative and modeling background to one short paragraph on About and
+  CV. Staff-level architecture, standards, and cross-team alignment remain future
+  scope; market feed and governance delivery claims were not added.
+- Added explicit portfolio `order` fields and Liquid sorting. Existing project
+  filenames and public URLs stay stable; QA/QC and securities remain separate.
+- The CV PDF keeps its stable path and is generated from the revised CV page.
+  Deployment remains a push to `main` followed by GitHub Pages.
+
+- Corrected the Google Fonts request to use supported EB Garamond axes. Wrapped
+  CV content in the existing page typography class and refined print rules to
+  hide the sidebar, use the page width, and keep headings with their content.
+
+- Financial data engineering is the primary focus. Computer vision is omitted;
+  quantitative background is a single supporting sentence. Customer analytics
+  projects emphasize ingestion, processing, and delivery rather than modeling or
+  marketing methods. Financial SQL modernization is a dedicated homepage focus.

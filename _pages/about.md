@@ -1,74 +1,89 @@
 ---
 permalink: /
 title: "Augustine Nguyen"
+description: "Senior Data Engineer focused on financial and market data platforms, pipeline architecture, reliability, and AI data engineering."
 author_profile: true
 redirect_from:
   - /about/
   - /about.html
 ---
 
-*Data Scientist · Financial Risk & Growth Analytics · Computer Vision · Republic of Korea*
+*Senior Data Engineer · Financial & Market Data Platforms · Republic of Korea*
 
-> *Where credit intelligence meets customer growth — turning data into revenue and trust.*
+> *Reliable data platforms for financial operations, analysis, and AI.*
 
 ---
 
 ## Introduction
 
-I am a **Data Scientist** with deep industry experience spanning **financial risk modeling**, **growth analytics**, **enterprise AI systems**, and **computer vision**. My work sits at the boundary between statistical rigor and production engineering — where models must be both mathematically defensible and reliable at scale.
+I focus on **data infrastructure for financial applications**, bringing a data science perspective to engineering. Based in the **Republic of Korea**, I connect ingestion, transformation, storage, and delivery to the needs of the people who depend on the data.
 
-I hold a dual focus that few practitioners combine: the **quantitative discipline** of credit risk and fraud detection (probabilistic scoring, causal identification, regulatory interpretability) and the **experimental culture** of growth analytics (attribution modeling, behavioral segmentation, Bayesian experimentation). I believe these domains reinforce each other — risk thinking sharpens experimentation, and growth thinking keeps models accountable to business outcomes. Increasingly, this work extends into **perception systems** — object detection and multi-object tracking — where modeling meets the physical world at the edge.
+My experience spans **credit risk platforms, investment securities SQL migration, blockchain transaction pipelines, streaming analytics, and enterprise AI retrieval**. It includes designing highly available database clusters managing **5B+ records**, optimizing **Spark** processing for a platform serving **10M+ users**, and building a document intelligence pipeline that won **FPT AI Hackathon 3 in 2025**.
 
----
+I am particularly interested in **financial and market data platforms** where correctness, availability, and explainable data flows matter. Working with customer, product, and financial data has taught me to start with the downstream requirement and carry it through to architecture and operations.
 
-## Selected Work
-
-**Champion — FPT AI Hackathon 3 (2025)**  
-Global competition across all FPT offices worldwide. Team *Cẩm Y Vệ (FKR-KTX)* placed 1st in the *KT/KB Technical Solutions* track with **AISOL** — a production-grade Japanese-language enterprise RAG platform. The system processes heterogeneous documents (text, tables, diagrams) via a parallelized multimodal pipeline built on **Qdrant · Gemini · Qwen**, with sub-second retrieval over large corpora.
+The scope I want to grow into is **Staff-level data engineering**: shaping platform architecture, establishing reusable engineering standards, and aligning data producers and consumers around clear requirements. I value decisions that make a platform easier for teams to operate and extend over time.
 
 ---
 
-## Research & Technical Focus
+## Selected Engineering Work
 
-**Financial Data Science**
-- Credit Risk Modeling — PD/LGD/EAD estimation, scorecard development, vintage analysis, model monitoring
-- Fraud Detection — real-time anomaly detection, graph-based fraud network analysis, behavioral sequencing
-- Investment Analytics — portfolio risk attribution, securities quality monitoring, performance measurement
-- Causal Inference — instrumental variables, difference-in-differences, propensity score matching, policy evaluation
+- **[ABACUS — Credit Risk Data Infrastructure](/portfolio/02-abacus/):** Highly available ClickHouse, MongoDB, and Redis clusters managing **5B+ records**, Spark processing for a platform serving **10M+ users**, and operational monitoring.
+- **[Investment Securities — SQL Migration](/portfolio/07-investment-securities/):** Oracle to EDB (PostgreSQL) SQL migration and query optimization aligned with financial business requirements.
+- **[BlockStream — Transaction Data Pipelines](/portfolio/05-blockstream/):** Ethereum and Polygon collection, Kafka event distribution, PostgreSQL storage, and OpenSearch / Algolia indexing.
+- **[AISOL — Enterprise AI Data Pipeline](/portfolio/01-aisol/):** Parallel processing of documents, tables, and diagrams for Japanese-language retrieval with Qdrant, Gemini, and Qwen.
 
-**Marketing & Growth Analytics**
-- Customer Segmentation — RFM analysis, behavioral clustering, customer lifetime value (CLV) modeling
-- Churn & Retention — survival analysis, early-warning systems, uplift modeling, retention triggers
-- Experimentation — hypothesis design, statistical power, CUPED variance reduction, Bayesian A/B testing
-- Attribution — multi-touch attribution, media mix modeling (MMM), incrementality testing
-- Funnel Analytics — conversion optimization, pricing elasticity, personalization engines
-
-**Generative AI & Retrieval Systems**
-- Retrieval-Augmented Generation — dense and sparse retrieval, hybrid search, re-ranking, multimodal pipelines
-- LLM Engineering — prompt optimization, fine-tuning, agentic workflows, evaluation frameworks
-
-**Computer Vision & Perception**
-- Object Detection — YOLO and SSD families, dataset curation, model evaluation
-- Multi-Object Tracking — DeepSORT, ByteTrack, StrongSORT, re-identification, Kalman filtering
-- Edge Inference — TensorRT optimization, NVIDIA Jetson deployment, ROS 2 integration
+**Champion — FPT AI Hackathon 3 (2025)** <br />
+Team *Cẩm Y Vệ (FKR-KTX)* placed 1st in the *KT/KB Technical Solutions* track of a global competition across FPT offices worldwide with **AISOL**.
 
 ---
 
-## Core Toolkit
+## Engineering Focus
 
-| Domain | Methods & Tools |
-|---|---|
-| **Generative AI & RAG** | LLM Pipelines · RAG · Vector Search · Qdrant · Gemini · Qwen · LangChain · Prompt Engineering |
-| **Computer Vision** | YOLO · SSD · DeepSORT · ByteTrack · StrongSORT · Re-ID · TensorRT · OpenCV · Jetson · ROS 2 |
-| **ML & Modeling** | Scikit-learn · XGBoost · LightGBM · Statsmodels · Survival Analysis · SHAP · LIME |
-| **Financial Analytics** | Credit Scoring · Fraud Rules Engine · Risk Dashboards · Basel Compliance Metrics |
-| **Marketing Analytics** | Cohort Analysis · CLV Modeling · MMM · Funnel Analytics · Propensity Scoring |
-| **Experimentation** | A/B · Multivariate · Bayesian A/B · Causal Inference (IV, DiD, PSM) · CUPED |
-| **Data & BI** | SQL · Pandas · dbt · Apache Spark · Tableau · Metabase · Chart.js |
-| **Streaming & Pipelines** | Apache Kafka · Airflow · ELK Stack · Kinesis · ETL/ELT |
-| **Databases** | PostgreSQL · Oracle · ClickHouse · MongoDB · Redis · OpenSearch |
-| **Cloud & Infra** | AWS · Azure · Docker · Kubernetes |
-| **Languages** | Python · Rust · SQL · R · Golang · SAS · TypeScript |
+### Financial Data Integrity & Market Data Semantics
+
+My financial data experience includes credit risk systems, investment securities workflows, and on-chain transactions. For market data, my priorities include **consistent instrument identifiers, event and ingestion timestamps, trading calendars, missing observations, and price adjustments**. For financial records, I pay attention to **currency, units, decimal precision, transaction status, and source reconciliation**. I care about preserving a record's meaning as it moves between systems and making corrections understandable to downstream users.
+
+### Financial SQL & Database Modernization
+
+My investment securities work includes **Oracle to EDB (PostgreSQL) SQL migration and query optimization**. I start with the financial business requirements that queries must preserve, then consider compatibility, access patterns, and performance. For financial platforms, I value clear transformation rules and reconciliation checks that help teams evaluate changes to their data workflows.
+
+### Reliable Pipelines & Recovery
+
+My project work spans **Kafka event streaming, Spark processing, resilient database clusters, disaster recovery, and operational monitoring**. For financial pipelines, my design priorities include explicit handling of late or duplicate records, safe retries and backfills, and recovery procedures teams can follow. A useful pipeline delivers data consistently and makes failures diagnosable.
+
+### Platform Architecture & Technical Direction
+
+I approach architecture through **access patterns, latency, throughput, storage cost, and operational complexity**. My experience with database clusters, streaming pipelines, and SQL migration informs those tradeoffs. As I move toward broader platform responsibility, I want to help teams document decisions, reuse ingestion and transformation patterns, and evolve interfaces without breaking downstream workflows.
+
+### Data Quality, Ownership & Traceability
+
+I value **clear dataset definitions, accountable ownership, source reconciliation, and traceable transformations**. The standards I want to help establish cover freshness and completeness expectations, schema changes, and the checks needed before data reaches consumers. These practices help teams investigate discrepancies and understand the inputs behind a financial result. I also value access controls and handling rules for sensitive financial fields.
+
+### Data Delivery for Finance & AI
+
+My work connects processing and storage to **SQL workflows, APIs, search indexes, operational dashboards, and AI retrieval**. I start with what consumers need to query or decide, then work backward to the required structure and delivery path. For AI inputs, that includes preserving source context; for financial analysis, it includes reproducible historical inputs.
+
+---
+
+## Core Engineering Experience
+
+| Domain | Tools & Methods |
+|:---|:---|
+| **Financial Data Systems** | Credit Risk Platforms · Investment Securities SQL · Transaction Ingestion · Operational Reporting |
+| **Batch & Streaming Pipelines** | Apache Spark · Apache Kafka · Airflow · Kinesis · ETL/ELT · ELK Stack |
+| **SQL & Data Transformation** | SQL Optimization · Oracle → EDB (PostgreSQL) Migration · ANSI SQL · dbt · Pandas |
+| **Storage & Reliability** | PostgreSQL · Oracle · ClickHouse · MongoDB · Redis · Highly Available Clusters · Disaster Recovery |
+| **AI Data Engineering** | Multimodal Document Processing · RAG · Vector Search · Qdrant · Gemini · Qwen · LangChain |
+| **Data Delivery & Observability** | FastAPI · Django · Spring Boot · REST APIs · OpenSearch · Operational Dashboards |
+| **Cloud & Infrastructure** | AWS · Azure · Docker · Kubernetes |
+| **Languages** | Python · SQL · Rust · Golang · Java · TypeScript |
+
+---
+
+## Quantitative & Modeling Background
+
+My background in **credit risk modeling, statistical analysis, and causal inference** helps me understand financial data requirements, including historical consistency, reproducible inputs, and downstream validation.
 
 ---
 
@@ -82,5 +97,16 @@ Global competition across all FPT offices worldwide. Team *Cẩm Y Vệ (FKR-KTX
 
 ---
 
-View my [**Projects**](/portfolio/) or browse the full [**CV**](/cv/).  
-Contact: [augustino0890@gmail.com](mailto:augustino0890@gmail.com) · [LinkedIn](https://www.linkedin.com/in/augustine2015/) · [GitHub](https://github.com/augustine0890) · [Twitter](https://twitter.com/augusti61988772) — open to DS roles in fintech, banking, growth, product analytics, and enterprise AI / RAG systems.
+## Why I Care
+
+I enjoy making data easier to trust and use. An operations team can investigate a discrepancy. An analyst can reproduce a financial report. An engineer can understand a pipeline's dependencies and recover it after a failure.
+
+That is what draws me to broader platform work: building systems that teams can inspect, explain, operate, and depend on as their data needs grow.
+
+---
+
+View my [**Projects**](/portfolio/) or browse the full [**CV**](/cv/).
+
+**Open to Senior Data Engineer roles in market data, financial services, and financial data platforms, with a path toward Staff-level platform responsibility.**
+
+Contact: [augustino0890@gmail.com](mailto:augustino0890@gmail.com) · [LinkedIn](https://www.linkedin.com/in/augustine2015/) · [GitHub](https://github.com/augustine0890) · [Twitter](https://twitter.com/augusti61988772)

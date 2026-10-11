@@ -1,6 +1,7 @@
 ---
 layout: archive
 title: "Projects"
+description: "Selected data engineering work across financial infrastructure, SQL migration, transaction pipelines, streaming analytics, and AI data processing."
 permalink: /portfolio/
 author_profile: true
 ---
@@ -8,7 +9,10 @@ author_profile: true
 {% include base_path %}
 
 
-{% for post in site.portfolio %}
+<p>Selected work in financial data infrastructure, SQL migration, transaction pipelines, and AI data processing. Each project describes the systems, delivery paths, and engineering contributions behind it.</p>
+
+{% assign projects = site.portfolio | sort: "order" %}
+{% for post in projects %}
   {% include archive-single.html %}
 {% endfor %}
 

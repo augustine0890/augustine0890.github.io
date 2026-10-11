@@ -1,19 +1,20 @@
 ---
-title: "BlockStream — Real-Time Blockchain Financial Data"
-excerpt: "On-chain transaction intelligence for Ethereum and Polygon networks via a publish-subscribe pipeline (Kafka → PostgreSQL → OpenSearch/Algolia)."
+title: "BlockStream — Real-Time Transaction Data Pipelines"
+excerpt: "Ethereum and Polygon transaction ingestion, Kafka event distribution, PostgreSQL storage, and OpenSearch / Algolia indexing."
 collection: portfolio
+order: 3
 ---
 
 **Company:** SupperTree, South Korea · **Role:** Software Engineer
 
-A scalable system for real-time monitoring and processing of blockchain transaction data from Ethereum and Polygon networks, using a publish-subscribe model for efficient data delivery.
+A scalable system for real-time collection and processing of **Ethereum and Polygon transaction data**, connecting ingestion, event distribution, storage, and search through a publish–subscribe architecture.
 
 ### Key Contributions
 
-- Designed end-to-end pipelines: on-chain collection → **Kafka** → **PostgreSQL** + **OpenSearch / Algolia** for sub-second indexing of Ethereum and Polygon transaction data.
-- Applied transaction pattern analysis and anomaly flagging — methodology directly transferable to payment fraud detection.
-- Ensured data integrity and auditability across high-throughput decentralized financial data flows, including enriched metadata (images, links) for advanced search.
+- Architected real-time collection of on-chain transaction data from **Ethereum and Polygon**.
+- Engineered the delivery path from **on-chain collection → Kafka → PostgreSQL → OpenSearch / Algolia**, supporting sub-second search.
+- Managed metadata enrichment, persistent storage, and indexing across the workflow to support data integrity and scalable retrieval.
 
 ### Tech Stack
 
-`Python` · `Golang` · `Apache Kafka` · `Algolia` · `OpenSearch` · `PostgreSQL` · `Oracle` · `Kinesis`
+`Python` · `Golang` · `Apache Kafka` · `PostgreSQL` · `OpenSearch` · `Algolia` · `Oracle` · `Kinesis`

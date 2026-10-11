@@ -1,17 +1,18 @@
 ---
-title: "Discord Emotion Tracker — NLP Sentiment & Voice-of-Customer Analytics"
-excerpt: "Real-time AI-powered sentiment analysis and translation for Discord communities. Built in Rust and Python."
+title: "Discord Emotion Tracker — NLP Data Pipeline"
+excerpt: "Message ingestion, NLP enrichment, translation, and MongoDB storage for downstream customer analytics."
 collection: portfolio
+order: 7
 ---
 
 **Company:** SupperTree, South Korea · **Role:** Software Engineer
 
-An AI-powered application to analyze customer service communications on Discord, providing sentiment analysis and real-time language translation for actionable insights.
+A message ingestion and enrichment pipeline for Discord customer service communications, connecting NLP processing and translation to queryable MongoDB storage.
 
 ### Key Contributions
 
 - Captured and analyzed real-time Discord interactions, building a labeled dataset for **sentiment analysis** and emotion classification.
-- Applied NLP via **AWS Comprehend** and **HuggingFace Rust-BERT** to detect emotional patterns across high-volume message streams — directly applicable to customer satisfaction and churn risk signals.
+- Applied NLP via **AWS Comprehend** and **HuggingFace Rust-BERT** to detect emotional patterns across high-volume message streams.
 - Implemented real-time language translation (**AWS Translate**, English → Korean) enabling cross-market customer insight aggregation.
 - Structured MongoDB storage for original messages, translations, and sentiment metrics — queryable for downstream analytics and reporting.
 

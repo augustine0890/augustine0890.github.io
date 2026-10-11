@@ -1,20 +1,20 @@
 ---
-title: "InsightFlow — Customer Behavior & Growth Analytics"
-excerpt: "Streaming analytics platform powering marketing and product decisions for e-commerce — RFM segmentation, conversion funnels, and propensity scoring."
+title: "InsightFlow — Customer Behavior Data Pipelines"
+excerpt: "Kafka and ELK event streaming, customer data workflows, and analytics delivery for e-commerce operations."
 collection: portfolio
+order: 5
 ---
 
 **Company:** FitPetMall, South Korea · **Role:** Data Software Engineer
 
-InsightFlow is a platform designed to analyze customer behavior, providing businesses with data-driven insights to understand and predict customer interactions more effectively on an e-commerce site.
+An event ingestion and processing platform connecting customer behavior records to downstream product and operational analysis.
 
 ### Key Contributions
 
-- Built real-time event streaming with **Kafka + ELK Stack**, capturing high-volume customer behavioral signals for downstream analytics.
-- Developed **RFM segmentation** and conversion funnel models, surfacing actionable growth levers for marketing and product teams.
-- Built propensity-to-purchase scoring pipelines, enabling data-driven campaign targeting and personalization.
-- Architected promotional, delivery, and shipping analytics driving measurable revenue and operational improvements.
+- Built **Kafka + ELK Stack** event streaming to capture high-volume customer behavior data.
+- Developed **customer data models and processing workflows** for downstream segmentation and funnel analysis.
+- Architected data workflows for **shipping, product delivery, and promotional analysis**.
 
 ### Tech Stack
 
-`Python` · `FastAPI` · `Apache Kafka` · `ELK Stack` · `Oracle` · `RFM Modeling` · `Propensity Scoring`
+`Python` · `FastAPI` · `Apache Kafka` · `ELK Stack` · `Oracle`

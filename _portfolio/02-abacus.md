@@ -1,19 +1,20 @@
 ---
-title: "ABACUS — Advanced Credit Risk Prediction Analysis Tool"
-excerpt: "Machine-learning credit risk platform serving 10M+ users and managing 5B+ records, with a +3% lift in scoring accuracy."
+title: "ABACUS — Credit Risk Data Infrastructure"
+excerpt: "Highly available database clusters managing 5B+ records, Spark pipelines for a platform serving 10M+ users, and operational monitoring."
 collection: portfolio
+order: 1
 ---
 
 **Company:** AZEN Global, South Korea · **Role:** Data Scientist / ML Engineer
 
-ABACUS is a platform that leverages machine learning to enhance fault detection capabilities and refine credit risk modeling, significantly improving the precision of financial assessments and operational reliability for **over 10 million users**.
+Data infrastructure for **ABACUS — Advanced Credit Risk Prediction Analysis Tool**, a fault-detection and credit risk platform serving **10M+ users**. Work spans storage architecture, distributed processing, and operational visibility.
 
 ### Key Contributions
 
-- Developed advanced credit risk models by implementing **machine learning algorithms**, achieving a **3% lift** in credit risk scoring accuracy and sharpening the precision of downstream financial assessments.
-- Optimized data pipelines for fault-detection systems by streamlining processing on **Apache Spark**, materially increasing throughput for workflows serving 10M+ users.
-- Architected **highly-available, resilient database clusters** across **ClickHouse · MongoDB · Redis** to manage **5B+ records**, with disaster-recovery provisions safeguarding data integrity and operational continuity.
-- Built **real-time monitoring dashboards** and interactive reports surfacing live platform signals, strengthening operational transparency and supporting informed decision-making.
+- Architected **highly available ClickHouse, MongoDB, and Redis clusters** managing **5B+ records**, with disaster recovery provisions supporting data integrity and operational continuity.
+- Optimized **Apache Spark** processing for fault-detection pipelines serving the platform.
+- Built **real-time monitoring dashboards and interactive reports** to surface live platform signals for operational decisions.
+- Developed credit risk models achieving a **3% lift in scoring accuracy**, connecting data processing to downstream model performance.
 
 ### Tech Stack
 

@@ -9,29 +9,28 @@ before editing the repository.
 This repository powers `https://augustine0890.github.io`, a professional
 portfolio site for Augustine Nguyen.
 
-Augustine is a Data Scientist based in the Republic of Korea with experience
-across financial risk, fraud detection, growth analytics, generative AI, and
-computer vision. The primary audience is hiring managers, technical recruiters,
-and senior practitioners evaluating him for data science or ML engineering
-roles. The secondary audience is collaborators who need a fast, credible
-reference for his background.
+Augustine is a data engineer based in the Republic of Korea with experience
+across credit risk data infrastructure, investment securities SQL migration,
+transaction pipelines, streaming analytics, and enterprise AI retrieval. The
+primary audience is hiring managers, technical recruiters, and engineers
+evaluating him for Senior Data Engineer roles in financial and market data.
 
-The site should communicate production impact and quantitative rigor quickly.
-It should not read like a generic blog, a generic academicpages clone, or an
-academic publication archive.
+The site should communicate engineering scope, reliability, and production
+impact quickly. Preserve the LaTeX-inspired design and the factual career record.
 
 ## 2. Current Positioning
 
-The portfolio positions Augustine around three connected domains:
+- Senior Data Engineer focused on financial and market data platforms
+- Pipeline architecture, distributed processing, database resilience, and delivery
+- Data quality, recovery, ownership, and traceability as design priorities
+- AI data engineering as supporting experience
+- Staff-level architecture, shared standards, and producer/consumer alignment as
+  future scope, not a claim of a current Staff title
 
-- Financial risk and fraud detection
-- Growth analytics and experimentation
-- Computer vision and perception systems
-
-The causal inference background is important. His Mendelian Randomization,
-instrumental variable, DiD, and experimental-methods experience should be
-preserved as a differentiator rather than flattened into generic analytics
-language.
+Keep quantitative and modeling background to a short supporting paragraph.
+Preserve the research history in the CV. Distinguish documented financial data
+work from market feed and governance interests; do not invent deployments,
+leadership responsibilities, or outcomes.
 
 High-signal facts that should not be changed without confirmation:
 
@@ -237,19 +236,19 @@ Top-level pages:
 Portfolio collection:
 
 - Files are numbered `01-*.md` through `07-*.md`.
-- Numeric prefixes control display order.
+- The `order` front-matter field controls display order on the Projects index.
 - Renaming a portfolio file changes the URL because collection permalinks use
   `/:collection/:path/`.
 
-Current portfolio files:
+Current portfolio files, in display order (URLs remain stable):
 
-- `01-aisol.md` - AISOL, Champion FPT AI Hackathon 3 (2025).
-- `02-blockstream.md` - real-time blockchain data system.
-- `03-discord-emotion-tracker.md` - Discord NLP/sentiment/translation work.
-- `04-nft-staking.md` - NFT staking and earning backend.
-- `05-insightflow.md` - customer behavior analytics platform.
-- `06-qaqc-dashboard.md` - QA/QC dashboard.
-- `07-investment-securities.md` - Oracle to EDB SQL migration.
+- `02-abacus.md` - credit risk data infrastructure (order 1)
+- `07-investment-securities.md` - Oracle to EDB SQL migration (order 2)
+- `05-blockstream.md` - real-time transaction data pipelines (order 3)
+- `01-aisol.md` - enterprise AI data pipeline, Champion FPT AI Hackathon 3 (order 4)
+- `03-insightflow.md` - streaming customer and product analytics (order 5)
+- `06-qaqc-dashboard.md` - QA/QC processing and reporting APIs (order 6)
+- `04-discord-emotion-tracker.md` - NLP ingestion and enrichment (order 7)
 
 ## 8. Local Development
 
@@ -384,7 +383,7 @@ Edit:
 
 Check:
 
-- Numeric prefix still gives desired display order.
+- `order` front matter gives the intended display order without renaming files.
 - File renames are intentional because they change URLs.
 - QA/QC dashboard and Investment Securities remain separate.
 - Project titles/excerpts stay aligned with About and CV.

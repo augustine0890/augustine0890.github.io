@@ -471,8 +471,88 @@ pre {
         text-align: justify;
     }
 
-    .cv-download-btn {
+    .page__content .cv-download-btn {
         display: none;
+    }
+
+    .sidebar,
+    .cv-download-actions {
+        display: none;
+    }
+
+    html,
+    body {
+        height: auto;
+        min-height: 0;
+        margin: 0;
+        padding: 0;
+        background: #fff;
+    }
+
+    #main {
+        margin: 0;
+        padding: 0;
+        max-width: none;
+        animation: none;
+    }
+
+    .archive,
+    .page {
+        float: none;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .cv-content {
+        h2, h3, h4 {
+            break-after: avoid-page;
+            page-break-after: avoid;
+            margin-top: 1.2em;
+            margin-bottom: 0.4em;
+        }
+
+        h2 {
+            font-size: 1.2em;
+        }
+
+        h3, h4 {
+            font-size: 1em;
+        }
+
+        h4 {
+            font-style: normal;
+            font-weight: bold;
+        }
+
+        p, li {
+            orphans: 3;
+            widows: 3;
+        }
+
+        h3 + p {
+            break-after: avoid-page;
+            page-break-after: avoid;
+        }
+
+        p {
+            margin-bottom: 0.65em;
+        }
+
+        ul {
+            margin-top: 0.4em;
+            margin-bottom: 0.7em;
+        }
+
+        table {
+            font-size: 0.9em;
+            margin: 1em 0;
+            break-inside: avoid-page;
+        }
+
+        hr {
+            margin: 0.7em auto;
+        }
     }
 
     a {
