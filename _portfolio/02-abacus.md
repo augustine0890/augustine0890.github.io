@@ -18,7 +18,7 @@ Data infrastructure for **ABACUS — Advanced Credit Risk Prediction Analysis To
 
 ### Engineering Scope
 
-Multi-store platform architecture: analytical, document, and cache tiers on ClickHouse, MongoDB, and Redis, with disaster recovery, distributed processing, and monitoring for a financial platform at 10M+ user scale.
+Three stores, each doing one job: ClickHouse for analytics, MongoDB for documents, and Redis for fast lookups. Around them sat disaster recovery, Spark processing, and monitoring for a financial platform with more than 10 million users.
 
 ### Tech Stack
 

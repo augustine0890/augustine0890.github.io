@@ -15,32 +15,32 @@ redirect_from:
 *Senior Financial Data Engineer · Market & Financial Data Platforms* <br />
 Republic of Korea · [augustino0890@gmail.com](mailto:augustino0890@gmail.com) · [LinkedIn](https://www.linkedin.com/in/augustine2015/) · [GitHub](https://github.com/augustine0890) · [Twitter](https://twitter.com/augusti61988772)
 
-> *Market and financial data that is correct, explainable, and recoverable.*
+> *Financial data that arrives on time, matches its source, and can be explained.*
 
 ---
 
 ## Profile
 
-Data engineer with **5+ years of industry data engineering**, focused on **market and financial data platforms**. Architected highly available ClickHouse, MongoDB, and Redis clusters managing **5B+ records**, optimized **Spark** processing for a platform serving **10M+ users**, built **Kafka**-based streams of on-chain financial transactions with sub-second search, and migrated investment securities SQL from **Oracle to EDB (PostgreSQL)**. Built the document pipeline behind the winning entry at **FPT AI Hackathon 3 (2025)**.
+Data engineer with 5+ years in industry, mostly on financial products. Designed highly available ClickHouse, MongoDB, and Redis clusters holding **5B+ records** for a credit risk platform with **10M+ users**, and tuned its Spark pipelines. Streamed on-chain transactions through **Kafka** into PostgreSQL and search with sub-second lookups. Moved investment securities SQL from **Oracle to EDB (PostgreSQL)** without changing its business logic. Built the document pipeline for the team that won **FPT AI Hackathon 3 (2025)**.
 
-Seeking **Senior Financial Data Engineer** roles, growing toward **Staff-level** ownership of platform architecture, shared engineering standards, and alignment between data producers and consumers. Engineering priorities include **point-in-time correctness, source reconciliation, controlled schema evolution, and recoverable ingestion**. A background in credit risk modeling keeps the design anchored to how financial data is consumed.
+Looking for Senior Financial Data Engineer roles, with the aim of growing into Staff-level work on platform architecture and shared standards. Started in credit risk modeling, which shapes how I design for the people who use the data. Cares most about point-in-time correctness, reconciliation with the source, careful schema changes, and ingestion that can be safely replayed.
 
 ---
 
 ## Platform & Architecture Highlights
 
-- **Multi-store platform architecture:** highly available ClickHouse, MongoDB, and Redis clusters for 5B+ records, with disaster recovery provisions (AZEN Global).
-- **End-to-end streaming design:** on-chain collection → Kafka → PostgreSQL → OpenSearch / Algolia, with sub-second search (SupperTree).
-- **Database platform migration:** Oracle → EDB (PostgreSQL), rewriting SQL to ANSI while preserving investment securities business logic (FPT Software Korea).
-- **Throughput at scale:** Spark pipeline optimization for a platform serving 10M+ users (AZEN Global).
-- **Operational visibility:** real-time monitoring dashboards and reporting APIs for platform operators and stakeholders (AZEN Global, FPT Software Korea).
+- **Multi-store architecture:** ClickHouse, MongoDB, and Redis clusters with high availability and disaster recovery for 5B+ records (AZEN Global).
+- **Streaming, end to end:** on-chain collection → Kafka → PostgreSQL → OpenSearch / Algolia, searchable in under a second (SupperTree).
+- **Database migration:** Oracle → EDB (PostgreSQL), with SQL rewritten to ANSI and the securities logic left unchanged (FPT Software Korea).
+- **Throughput:** Spark tuning for a platform with 10M+ users (AZEN Global).
+- **Operational visibility:** live monitoring dashboards and reporting APIs that operators and stakeholders used day to day (AZEN Global, FPT Software Korea).
 
 ---
 
 ## Awards & Recognition
 
 **Champion — FPT AI Hackathon 3** · *2025* <br />
-Global competition across all FPT offices worldwide. Team *Cẩm Y Vệ (FKR-KTX)* placed 1st in the *KT/KB Technical Solutions* track with **AISOL**, a Japanese-language enterprise RAG platform built on Qdrant, Gemini, and Qwen.
+First place in the *KT/KB Technical Solutions* track of a global competition across FPT offices, as part of team *Cẩm Y Vệ (FKR-KTX)*. Our entry, **AISOL**, was a Japanese-language enterprise RAG system built on Qdrant, Gemini, and Qwen.
 
 ---
 
@@ -51,10 +51,9 @@ Global competition across all FPT offices worldwide. Team *Cẩm Y Vệ (FKR-KTX
 
 #### Investment Securities Project — Meta
 
-
-Migrated an Oracle database to EDB (PostgreSQL), optimizing SQL queries for performance and compatibility to meet business requirements.
-- Converted and optimized Oracle SQL queries to ANSI-standard for EDB (PostgreSQL) compatibility, improving query efficiency.
-- Translated complex business requirements into high-performance SQL queries, ensuring alignment with project goals.
+Migration of an investment securities database from Oracle to EDB (PostgreSQL).
+- Rewrote Oracle SQL as ANSI SQL so it ran on EDB (PostgreSQL), and made the queries faster in the process.
+- Turned complex securities business requirements into efficient SQL.
 
 *Technologies: Oracle · EDB (PostgreSQL) · ANSI SQL*
 
@@ -73,9 +72,9 @@ Data processing and reporting for quality operations.
 
 #### BlockStream — Real-Time Blockchain Data System
 
-- Built scalable real-time monitoring for Ethereum and Polygon transaction data using a publish-subscribe architecture.
-- Engineered data pipelines with Kafka, persisted in PostgreSQL, indexed in OpenSearch/Algolia for high-performance search.
-- Managed end-to-end workflow from on-chain collection to storage and indexing, including enriched metadata.
+- Built real-time collection and monitoring of Ethereum and Polygon transactions on a publish–subscribe design.
+- Sent transactions through Kafka into PostgreSQL, then indexed them in OpenSearch and Algolia for sub-second search.
+- Owned the flow from collection to storage and indexing, including metadata enrichment.
 
 #### Discord Emotion Tracker
 
@@ -85,8 +84,8 @@ Data processing and reporting for quality operations.
 
 #### NFT Management — Token Staking and Earning App
 
-- Developed scalable backend infrastructure for NFT staking and token earning, ensuring reliable UX and transaction integrity.
-- Integrated blockchain technology for transparent NFT transactions; optimized database queries for high-performance data handling.
+- Built the backend for NFT staking and token rewards, with attention to transaction integrity.
+- Connected the app to on-chain NFT transactions and optimized the database queries behind it.
 
 *Technologies: Python · Rust · Golang · TypeScript · Node.js · Kafka · AWS Comprehend/Translate · HuggingFace · Algolia · OpenSearch · PostgreSQL · MongoDB · Kinesis*
 
@@ -112,10 +111,10 @@ Data processing and reporting for quality operations.
 
 Data infrastructure and processing for a fault-detection and credit risk platform serving more than **10 million users**.
 
-- Architected highly-available, resilient database clusters across ClickHouse, MongoDB, and Redis to manage 5B+ records, with disaster-recovery provisions safeguarding data integrity and operational continuity.
-- Optimized fault-detection data pipelines by streamlining processing on Apache Spark, materially increasing throughput for workflows serving 10M+ users.
-- Built real-time monitoring dashboards and interactive reports surfacing live platform signals, strengthening operational transparency and supporting informed decision-making.
-- Developed advanced credit risk models using machine learning algorithms, achieving a 3% lift in scoring accuracy and improving the precision of downstream financial assessments.
+- Designed highly available ClickHouse, MongoDB, and Redis clusters holding 5B+ records, with disaster recovery in place.
+- Reworked fault-detection pipelines on Apache Spark, raising throughput for workflows serving 10M+ users.
+- Built live monitoring dashboards and reports so the team could see platform health and act on it.
+- Developed machine learning credit risk models that improved scoring accuracy by 3%.
 
 *Technologies: Python · Django · FastAPI · ClickHouse · MongoDB · Oracle · Redis · Apache Spark*
 

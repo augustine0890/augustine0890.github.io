@@ -17,7 +17,7 @@ A scalable system for real-time collection and processing of **Ethereum and Poly
 
 ### Engineering Scope
 
-End-to-end ownership of a streaming financial transaction pipeline, from collection through event distribution, persistence, and search indexing. The problem has the same shape as a market data feed: high-volume, time-ordered events that must be captured completely and served quickly.
+I owned this pipeline from the first collected transaction to the search index. It is close to a market data feed in spirit: a steady flow of time-ordered events, where missing one is a bug and serving them slowly is a bug too.
 
 ### Tech Stack
 

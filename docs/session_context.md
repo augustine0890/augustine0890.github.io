@@ -95,6 +95,8 @@ Upstream theme is not tracked as a Git remote — all files are fully owned.
 
 **Positioning:** Senior Financial Data Engineer for market and financial data platforms, supported by AI pipeline experience. Keep quantitative and modeling background to one sentence; preserve the factual graduate research record. Describe market data semantics, recovery, quality standards, and shared platform ownership as design priorities or future direction where delivery evidence is absent.
 
+**Voice and overlap with the GitHub profile:** The profile README (`augustine0890/augustine0890`) is the short version: a few plain sentences, a project table, five habits, and links here. This site is the long-form version. Keep the meaning aligned but never reuse the profile's sentences. Write in plain first person: short sentences, few bold phrases, no slogan taglines, no stacked "X, Y, and Z" phrasing, no "not just X" constructions.
+
 **Hackathon:** FPT AI Hackathon 3 champion, 2025 (AISOL project, Japanese enterprise RAG on Qdrant/Gemini/Qwen). Most prominent credential — keep it featured on About and CV.
 
 **CV download:** Button is in `_pages/cv.md` after the Personal Details section. Links to `/files/augustine-nguyen-cv.pdf` with `download` attribute. Button hidden from print via `@media print` in `_latex_extras.scss`.
@@ -264,3 +266,10 @@ Aligned with the GitHub profile README (commit `d66ab40` in `augustine0890/augus
   skills table, and removed the Quantitative section. Research job and thesis kept.
 - ABACUS and BlockStream project pages gained an "Engineering Scope" note.
 - Mermaid is not rendered by GitHub Pages Jekyll; use tables for architecture.
+
+### 2026-10-11 — De-duplicated from the profile and humanized
+
+- About rewritten as first-person long form (career narrative, Staff section,
+  "What I Have Learned About Financial Data"). CV Profile and filler bullets
+  rewritten in plainer language; facts unchanged.
+- Profile README cut to a concise summary that links here for detail.
